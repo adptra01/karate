@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
     data-assets-path="/assets/" data-template="vertical-menu-template-free">
 
 <head>
@@ -47,6 +47,8 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="/assets/js/config.js"></script>
+    <link rel="stylesheet" href="assets/vendor/libs/select2/select2.css " />
+
     @yield('css')
 </head>
 
@@ -236,11 +238,17 @@
                 <!-- Content wrapper -->
                 <div class="content-wrapper">
                     <!-- Content -->
-                    <div class="container-fluid my-3">
-                        <h4 class="fw-bold">{{ $title ?? '' }}</h4>
-                    </div>
-
                     <div class="container-xxl flex-grow-1 container-p-y">
+                        @if (session('success'))
+                            <div class="alert alert-primary" role="alert">
+                                <strong>Alert Heading</strong> Some Word
+                            </div>
+                        @elseif ($errors->any())
+                            <div class="alert alert-danger" role="alert">
+                                <strong>Alert Heading</strong> Some Word
+                            </div>
+                        @endif
+                        <h4 class="fw-bold">{{ $title ?? '' }}</h4>
                         {{ $slot }}
                     </div>
                     <!-- / Content -->
@@ -312,6 +320,10 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="assets/vendor/libs/select2/select2.js"></script>
+    <script>
+        $(".select2").select2();
+    </script>
     @yield('js')
 </body>
 
