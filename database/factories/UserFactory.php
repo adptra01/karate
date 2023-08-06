@@ -20,6 +20,10 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
+            'avatar' => 'https://cdn.dribbble.com/users/4161211/screenshots/14926208/media/43167fd51820bf5330102b428939efaa.png',
+            'telp' => $this->faker->phoneNumber(),
+            'status' => rand(0,1),
+            'address' => $this->faker->address(),
         ];
     }
 

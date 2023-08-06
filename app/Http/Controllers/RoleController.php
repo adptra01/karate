@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -12,9 +13,9 @@ class RoleController extends Controller
     {
         $roles = Role::withCount('permissions')->get();
         $permissions = Permission::pluck('name', 'id');
+        $users = User::latest()->get();
 
-
-        return view('roles.index', compact('roles', 'permissions'));
+        return view('roles.index', compact('roles', 'permissions', 'users'));
     }
 
     public function store(Request $request)
@@ -28,14 +29,15 @@ class RoleController extends Controller
 
         $role->givePermissionTo($request->input('permissions'));
 
-        return redirect()->route('roles.index');
+        return redirect()->route('roles.index')->with('success', 'Role baru berhasil dibuat.');
     }
 
     public function edit(Role $role)
     {
         $permissions = Permission::pluck('name', 'id');
+        $roles = Role::withCount('permissions')->get();
 
-        return view('roles.edit', compact('role', 'permissions'));
+        return view('roles.edit', compact('role', 'permissions', 'roles'));
     }
 
     public function update(Request $request, Role $role)
@@ -49,13 +51,13 @@ class RoleController extends Controller
 
         $role->syncPermissions($request->input('permissions'));
 
-        return redirect()->route('roles.index');
+        return redirect()->route('roles.index')->with('success', 'Role berhasil diubah.');
     }
 
     public function destroy(Role $role)
     {
         $role->delete();
 
-        return redirect()->route('roles.index');
+        return redirect()->route('roles.index')->with('success', 'Role berhasil dihapus.');
     }
 }

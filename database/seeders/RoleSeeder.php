@@ -16,15 +16,23 @@ class RoleSeeder extends Seeder
     {
         $roles = [
             [
-                'name' => 'super admin',
+                'name' => 'Super Admin',
                 'guard_name' => 'web'
             ],
             [
-                'name' => 'organizer',
+                'name' => 'Tournament Management',
                 'guard_name' => 'web'
             ],
             [
-                'name' => 'participant',
+                'name' => 'Score Management',
+                'guard_name' => 'web'
+            ],
+            [
+                'name' => 'Participant Management',
+                'guard_name' => 'web'
+            ],
+            [
+                'name' => 'Team Management',
                 'guard_name' => 'web'
             ],
         ];
