@@ -15,8 +15,8 @@
                             <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
                                 @foreach ($role->users as $user)
                                     <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                        class="avatar avatar-sm pull-up" aria-label="Vinnie Mostowy"
-                                        data-bs-original-title="Vinnie Mostowy">
+                                        class="avatar avatar-sm pull-up" aria-label="{{ $user->name }}"
+                                        data-bs-original-title="{{ $user->name }}">
                                         <img class="rounded-circle" src="{{ $user->avatar }}" alt="Avatar">
                                     </li>
                                 @endforeach

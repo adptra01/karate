@@ -31,15 +31,6 @@ class RoleController extends Controller
 
         return redirect()->route('roles.index')->with('success', 'Role baru berhasil dibuat.');
     }
-
-    public function edit(Role $role)
-    {
-        $permissions = Permission::pluck('name', 'id');
-        $roles = Role::withCount('permissions')->get();
-
-        return view('roles.edit', compact('role', 'permissions', 'roles'));
-    }
-
     public function update(Request $request, Role $role)
     {
         $request->validate([
@@ -53,7 +44,6 @@ class RoleController extends Controller
 
         return redirect()->route('roles.index')->with('success', 'Role berhasil diubah.');
     }
-
     public function destroy(Role $role)
     {
         $role->delete();
