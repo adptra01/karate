@@ -25,5 +25,12 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::resource('roles', RoleController::class);
+Route::prefix('roles')->group(function () {
+    Route::get('/', [RoleController::class, 'index'])->name('roles.index');
+    Route::post('/', [RoleController::class, 'store'])->name('roles.store');
+    Route::put('/{role}', [RoleController::class, 'update'])->name('roles.update');
+    Route::delete('/{role}', [RoleController::class, 'destroy'])->name('roles.destroy');
+});
+
+Route::resource('users', RoleController::class);
 Route::resource('permissions', PermissionController::class);

@@ -57,23 +57,27 @@
                         <tr>
                             <th>No.</th>
                             <th>Name</th>
+                            <th>Image</th>
                             <th>Role</th>
                             <th>status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($users as $no => $item)
+                        @foreach ($users as $no => $user)
                             <tr>
                                 <td>{{ ++$no }}.</td>
-                                <td>{{ $item->name }}</td>
-                                <td>{{ $item->roles->first()->name ?? '-' }}</td>
+                                <td><img src="{{ $user->avatar }}" class="rounded-circle" alt="avatar user"
+                                        width="40" height="40" style="object-fit: cover;"></td>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->roles->first()->name ?? '-' }}</td>
                                 <td><span
-                                        class="badge bg-label-{{ $item->status == 0 ? 'danger' : 'success' }}">{{ $item->status == 0 ? 'NON ACTIVE' : 'ACTIVE' }}</span>
+                                        class="badge bg-label-{{ $user->status == 0 ? 'danger' : 'success' }}">{{ $user->status == 0 ? 'NON ACTIVE' : 'ACTIVE' }}</span>
                                 </td>
                                 <td>
                                     <div class="d-flex gap-3 justify-content-center">
-
+                                        <a class="btn btn-info btn-sm" href="{{ route('users.show', $user->id) }}"
+                                            role="button">Show</a>
                                     </div>
                                 </td>
                             </tr>
