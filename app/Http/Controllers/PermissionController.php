@@ -11,15 +11,12 @@ class PermissionController extends Controller
     public function index()
     {
         $permissions = Permission::with('roles:name')->get();
-
-        return view('permissions.index', compact('permissions'));
-    }
-
-    public function create() {
         $roles = Role::pluck('name', 'id');
 
-        return view('permissions.create', compact('roles'));
+
+        return view('permissions.index', compact('permissions', 'roles'));
     }
+
 
     public function store(Request $request) {
         $data = $request->validate([
@@ -31,13 +28,7 @@ class PermissionController extends Controller
 
         $permission->syncRoles($request->input('roles'));
 
-        return redirect()->route('permission-editor.permissions.index');
-    }
-
-    public function edit(Permission $permission) {
-        $roles = Role::pluck('name', 'id');
-
-        return view('permissions.edit', compact('permission', 'roles'));
+        return redirect()->route('permissions.index')->with('success', 'Permissions Berhasil dibuat');
     }
 
     public function update(Request $request, Permission $permission)
@@ -51,13 +42,13 @@ class PermissionController extends Controller
 
         $permission->syncRoles($request->input('roles'));
 
-        return redirect()->route('permission-editor.permissions.index');
+        return redirect()->route('permissions.index')->with('success', 'Permissions Berhasil diubah');
     }
 
     public function destroy(Permission $permission)
     {
         $permission->delete();
 
-        return redirect()->route('permission-editor.permissions.index');
+        return redirect()->route('permissions.index')->with('success', 'Permissions Berhasil dihapus');
     }
 }

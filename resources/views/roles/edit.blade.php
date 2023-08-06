@@ -21,40 +21,38 @@
                         <p class="fw-bold text-primary">{{ $role->name }}</p>
                     </div>
                     <!-- Add role form -->
-                    <form id="addRoleForm" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework"
-                        onsubmit="return false" novalidate="novalidate">
-                        <div class="col-12 mb-4 fv-plugins-icon-container">
-                            <label class="form-label" for="name">Role Name</label>
-                            <input type="text" id="name" name="name" class="form-control"
-                                value="{{ $role->name }}" placeholder="Enter a role name" tabindex="-1"
-                                data-listener-added_b4d5a9bb="true">
-                            @error('name')
-                                <span class="text-danger fw-bold">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="table-responsive">
-                            <div class="row">
-                                <h6>Role Permissions</h4>
-                                    @error('permissions')
-                                        <span class="text-danger fw-bold">{{ $message }}</span>
-                                    @enderror
-                                    <!-- Permission table -->
-                                    @foreach ($permissions as $id => $name)
-                                        <div class="col-md-6">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="permissions[]"
-                                                    id="permission-{{ $id }}" value="{{ $id }}"
-                                                    {{ in_array($id, $role->permissions->pluck('id')->toArray()) ? 'checked' : '' }}>
-                                                <label class="form-check-label"
-                                                    for="permission-{{ $id }}">{{ $name }}</label>
-                                            </div>
+                    <div class="col-12 mb-4 fv-plugins-icon-container">
+                        <label class="form-label" for="name">Role Name</label>
+                        <input type="text" id="name" name="name" class="form-control"
+                            value="{{ $role->name }}" placeholder="Enter a role name" tabindex="-1"
+                            data-listener-added_b4d5a9bb="true">
+                        @error('name')
+                            <span class="text-danger fw-bold">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="table-responsive">
+                        <div class="row">
+                            <h6>Role Permissions</h4>
+                                @error('permissions')
+                                    <span class="text-danger fw-bold">{{ $message }}</span>
+                                @enderror
+                                <!-- Permission table -->
+                                @foreach ($permissions as $id => $name)
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="permissions[]"
+                                                id="permission-{{ $id }}" value="{{ $id }}"
+                                                {{ in_array($id, $role->permissions->pluck('id')->toArray()) ? 'checked' : '' }}>
+                                            <label class="form-check-label"
+                                                for="permission-{{ $id }}">{{ $name }}</label>
                                         </div>
-                                    @endforeach
-                            </div>
-
-                            <!-- Permission table -->
+                                    </div>
+                                @endforeach
                         </div>
-                        <!--/ Add role form -->
+
+                        <!-- Permission table -->
+                    </div>
+                    <!--/ Add role form -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

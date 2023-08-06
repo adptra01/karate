@@ -9,7 +9,7 @@
 
     <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+            <i class="menu-icon tf-icons bx bx-check-shield"></i>
             <div class="text-truncate" data-i18n="Roles & Permissions">Roles & Permissions</div>
         </a>
         <ul class="menu-sub">

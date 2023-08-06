@@ -1,10 +1,8 @@
 <x-layout>
     <x-slot name="title">Roles list</x-slot>
     @include('layouts.table')
-    <div class="alert alert-primary" role="alert">
-        <strong>Sebuah peran menyediakan akses ke menu dan fitur yang telah ditentukan sehingga tergantung pada peran
-            yang diberikan, seorang administrator dapat memiliki akses ke apa yang dibutuhkan pengguna.</strong>
-    </div>
+    <p>Sebuah peran menyediakan akses ke menu dan fitur yang telah ditentukan sehingga tergantung pada peran
+        yang diberikan, seorang administrator dapat memiliki akses ke apa yang dibutuhkan pengguna.</p>
     <div class="row g-4 mb-3">
         @foreach ($roles as $role)
             <div class="col-xl-4 col-lg-6 col-md-6">

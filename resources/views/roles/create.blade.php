@@ -19,9 +19,7 @@
                         <p class="fw-bold text-primary">Set role permissions</p>
                     </div>
                     <!-- Add role form -->
-                    <form id="addRoleForm" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework"
-                        onsubmit="return false" novalidate="novalidate">
-                        <div class="col-12 mb-4 fv-plugins-icon-container">
+                        <div class="col-12 mb-4">
                             <label class="form-label" for="name">Role Name</label>
                             <input type="text" id="name" name="name" class="form-control"
                                 placeholder="Enter a role name" tabindex="-1" data-listener-added_b4d5a9bb="true">

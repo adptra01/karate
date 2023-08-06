@@ -31,6 +31,11 @@ Route::prefix('roles')->group(function () {
     Route::put('/{role}', [RoleController::class, 'update'])->name('roles.update');
     Route::delete('/{role}', [RoleController::class, 'destroy'])->name('roles.destroy');
 });
+Route::prefix('permissions')->group(function () {
+    Route::get('/', [PermissionController::class, 'index'])->name('permissions.index');
+    Route::post('/', [PermissionController::class, 'store'])->name('permissions.store');
+    Route::put('/{permission}', [PermissionController::class, 'update'])->name('permissions.update');
+    Route::delete('/{permission}', [PermissionController::class, 'destroy'])->name('permissions.destroy');
+});
 
 Route::resource('users', RoleController::class);
-Route::resource('permissions', PermissionController::class);
