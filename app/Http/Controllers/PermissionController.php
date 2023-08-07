@@ -10,11 +10,11 @@ class PermissionController extends Controller
 {
     public function index()
     {
-        $permissions = Permission::with('roles:name')->get();
+        $permissions = Permission::with('roles:name')->latest()->get();
         $roles = Role::pluck('name', 'id');
 
 
-        return view('permissions.index', compact('permissions', 'roles'));
+        return view('adm.permissions.index', compact('permissions', 'roles'));
     }
 
 

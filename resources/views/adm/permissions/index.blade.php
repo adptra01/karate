@@ -5,7 +5,7 @@
         ditunjukkan di bawah ini.</p>
     <div class="card">
         <div class="card-header">
-            @include('permissions.create')
+            @include('adm.permissions.create')
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -32,7 +32,7 @@
                                 <td>{{ $permission->created_at }}</td>
                                 <td>
                                     <div class="d-flex gap-3 justify-content-center">
-                                        @include('permissions.edit')
+                                        @include('adm.permissions.edit')
                                         <form action="{{ route('permissions.destroy', $permission->id) }}"
                                             method="post">
                                             @csrf

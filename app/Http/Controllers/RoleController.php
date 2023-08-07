@@ -11,11 +11,11 @@ class RoleController extends Controller
 {
     public function index()
     {
-        $roles = Role::withCount('permissions')->get();
+        $roles = Role::withCount('permissions')->latest()->get();
         $permissions = Permission::pluck('name', 'id');
         $users = User::latest()->get();
 
-        return view('roles.index', compact('roles', 'permissions', 'users'));
+        return view('adm.roles.index', compact('roles', 'permissions', 'users'));
     }
 
     public function store(Request $request)

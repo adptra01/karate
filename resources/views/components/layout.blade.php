@@ -50,6 +50,9 @@
     <link rel="stylesheet" href="/assets/vendor/libs/select2/select2.css " />
 
     @yield('css')
+
+    <!-- Livewire -->
+    @livewireStyles
 </head>
 
 <body>
@@ -294,12 +297,9 @@
         <!-- Overlay -->
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-    <!-- / Layout wrapper -->
 
-    {{-- <div class="buy-now">
-        <a href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/" target="_blank"
-            class="btn btn-danger btn-buy-now">Upgrade to Pro</a>
-    </div> --}}
+    <!-- / Layout wrapper -->
+    <!-- Livewire -->
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
@@ -327,6 +327,7 @@
         $(".select2").select2();
     </script>
     @yield('js')
+    @livewireScripts
 </body>
 
 </html>

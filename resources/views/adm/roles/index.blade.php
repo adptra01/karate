@@ -22,8 +22,8 @@
                         </div>
                         <div class="d-flex justify-content-between align-items-end">
                             <div class="role-heading justify-content-rounded">
-                                <h4 class="mb-1">{{ $role->name }}</h4>
-                                @include('roles.edit')
+                                <h5 class="mb-1">{{ $role->name }}</h5>
+                                @include('adm.roles.edit')
                             </div>
                             <a href="{{ route('roles.destroy', $role->id) }}"
                                 onclick="event.preventDefault();
@@ -46,7 +46,7 @@
 
     <div class="card">
         <div class="card-header">
-            @include('roles.create')
+            @include('adm.roles.create')
         </div>
         <div class="card-body">
             <div class="table-responsive">
