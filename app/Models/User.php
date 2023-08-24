@@ -28,6 +28,11 @@ class User extends Authenticatable
         'address'
     ];
 
+    public function media()
+    {
+        return $this->morphMany(Media::class, 'medially');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -46,4 +51,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
 }

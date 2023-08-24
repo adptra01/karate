@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Media;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -54,7 +57,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'avatar' => ['required'],
-            'telp' => ['required', 'min:11', 'numeric', 'digits_between:10,13'],
+            'telp' => ['required', 'min:11', 'numeric', 'digits_between:10,13', 'unique:users,telp'],
             'address' => ['required', 'min:5', 'string', 'max:200'],
         ]);
     }
@@ -67,13 +70,36 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $image = $data['avatar'];
+        
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'avatar' => $data['avatar'],
             'telp' => $data['telp'],
             'address' => $data['address'],
         ]);
+
+        try {
+            $result = Cloudinary::upload($image->getRealPath(), ['public_id' => 'img' . rand()]);
+
+            $media = new Media([
+                'file_url' => $result->getSecurePath(),
+                'file_name' => $result->getPublicId(),
+                'file_type' => $result->getExtension(),
+                'size' => $result->getSize(),
+            ]);
+
+            $user->media()->save($media);
+            $user->update([
+                'avatar' => $result->getSecurePath(),
+            ]);
+        } catch (\Throwable $th) {
+
+        }
+
+        Auth::login($user);
+
+        return $user;
     }
 }

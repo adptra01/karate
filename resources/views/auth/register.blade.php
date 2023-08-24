@@ -105,17 +105,8 @@
                         </div>
                         <div class="bs-stepper-content">
                             <form id="formAuthentication" class="mb-3" action="{{ route('register') }}"
-                                method="POST">
+                                method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <!-- Account Details
-                                'name',
-                                'email',
-                                'password',
-                                'avatar',
-                                'telp',
-                                'status',
-                                'address'
-                                -->
                                 <div id="account-details" class="content">
                                     <div class="content-header mb-3">
                                         <h6 class="mb-0">Account Details</h6>

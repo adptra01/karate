@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Media;
 use App\Models\User;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,8 +18,50 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function avatar($id)
+    public function avatar(Request $request, $id)
     {
+        $user = User::find($id);
+        $avatar = Media::find($user->media->first()->id);
+        $image = $request->file('avatar');
+
+        try {
+            if ($avatar) {
+                Cloudinary::destroy($avatar->file_name);
+
+                $result = Cloudinary::upload($image->getRealPath(), ['public_id' => 'img' . rand()]);
+
+                $avatar->update([
+                    'file_url' => $result->getSecurePath(),
+                    'file_name' => $result->getPublicId(),
+                    'file_type' => $result->getExtension(),
+                    'size' => $result->getSize(),
+                ]);
+
+                $user->update([
+                    'avatar' => $result->getSecurePath(),
+                ]);
+            } else {
+                $result = Cloudinary::upload($image->getRealPath(), ['public_id' => 'img' . rand()]);
+
+                $media = new Media([
+                    'file_url' => $result->getSecurePath(),
+                    'file_name' => $result->getPublicId(),
+                    'file_type' => $result->getExtension(),
+                    'size' => $result->getSize(),
+                ]);
+
+                $user->media()->save($media);
+                $user->update([
+                    'avatar' => $result->getSecurePath(),
+                ]);
+            }
+
+            return back()->with('success');
+        } catch (\Throwable $th) {
+            return back()->with('error');
+        }
+
+
 
     }
 
