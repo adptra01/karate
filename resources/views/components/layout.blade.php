@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
+<html lang="en" class="dark-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
     data-assets-path="/assets/" data-template="vertical-menu-template-free">
 
 <head>
@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
 
     <!-- Core CSS dark-style -->
-    <link rel="stylesheet" href="//assets/vendor/css/core-dark.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="//assets/vendor/css/theme-default-dark.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="/assets/vendor/css/dark-theme/core-dark.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="/assets/vendor/css/dark-theme/theme-default-dark.css" class="template-customizer-theme-css" />
 
     <link rel="stylesheet" href="/assets/css/demo.css" />
 
@@ -47,7 +47,6 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="/assets/js/config.js"></script>
-    <link rel="stylesheet" href="/assets/vendor/libs/select2/select2.css " />
 
     @yield('css')
 
@@ -322,10 +321,7 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script src="/assets/vendor/libs/select2/select2.js"></script>
-    <script>
-        $(".select2").select2();
-    </script>
+
     @yield('js')
     @livewireScripts
 </body>
