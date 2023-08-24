@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 Route::middleware(['auth'])->group(function () {
@@ -44,6 +45,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/{id}', [UserController::class, 'show'])->name('users.show');
         Route::put('/{id}', [UserController::class, 'update'])->name('users.update');
         Route::delete('/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+    });
+    Route::prefix('account')->group(function () {
+        Route::get('/{slug}/profile', [ProfileController::class, 'index'])->name('profile.index');
+        Route::put('/{id}/avatar', [ProfileController::class, 'avatar'])->name('profile.avatar');
+        Route::put('/{id}', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/{id}', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
     });
 
 });

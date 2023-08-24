@@ -53,12 +53,15 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'avatar' => ['required'],
+            'telp' => ['required', 'min:11', 'numeric', 'digits_between:10,13'],
+            'address' => ['required', 'min:5', 'string', 'max:200'],
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
-     *
+     * 'name','email','password','avatar','telp','status','address'
      * @param  array  $data
      * @return \App\Models\User
      */
@@ -67,7 +70,10 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => bcrypt($data['password']),
+            'avatar' => $data['avatar'],
+            'telp' => $data['telp'],
+            'address' => $data['address'],
         ]);
     }
 }

@@ -30,7 +30,8 @@
 
     <!-- Core CSS dark-style -->
     <link rel="stylesheet" href="/assets/vendor/css/dark-theme/core-dark.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="/assets/vendor/css/dark-theme/theme-default-dark.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="/assets/vendor/css/dark-theme/theme-default-dark.css"
+        class="template-customizer-theme-css" />
 
     <link rel="stylesheet" href="/assets/css/demo.css" />
 
@@ -179,13 +180,7 @@
                                     <li>
                                         <div class="dropdown-divider"></div>
                                     </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="bx bx-user me-2"></i>
-                                            <span class="align-middle">My Profile</span>
-                                        </a>
-                                    </li>
-                                    <li>
+                                    {{-- <li>
                                         <a class="dropdown-item" href="#">
                                             <i class="bx bx-cog me-2"></i>
                                             <span class="align-middle">Settings</span>
@@ -200,8 +195,15 @@
                                                     class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
                                             </span>
                                         </a>
-                                    </li>
+                                    </li> --}}
                                     @auth
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="{{ route('profile.index', Str::slug(Auth()->user()->name)) }}">
+                                                <i class="bx bx-user me-2"></i>
+                                                <span class="align-middle">My Profile</span>
+                                            </a>
+                                        </li>
                                         <li>
                                             <a class="dropdown-item" href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
