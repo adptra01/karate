@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
@@ -51,9 +52,7 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/{id}/avatar', [ProfileController::class, 'avatar'])->name('profile.avatar');
         Route::put('/{id}', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/{id}', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
     });
 
+    Route::resource('events', EventController::class);
 });
-
-

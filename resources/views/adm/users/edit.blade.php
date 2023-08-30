@@ -81,7 +81,7 @@
                     <option value=" ">Select one</option>
                     @foreach ($roles as $role)
                         <option value="{{ $role->id }}"
-                            {{ $user->roles->first()->id == $role->id ? 'selected' : '' }}>
+                            @if ($user->roles->first()) {{ $user->roles->first()->id == $role->id ? 'selected' : '' }} @endif>
                             {{ $role->name }}
                         </option>
                     @endforeach

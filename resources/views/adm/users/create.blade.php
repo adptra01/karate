@@ -15,8 +15,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="text-center mb-4">
-                        <h3 class="role-title fw-bold">Add New User</h3>
-                        <p class="fw-bold text-primary">Set role user</p>
+                        <h3 class="role-title fw-bold">Tambahkan Pengguna Baru
+                        </h3>
+                        <p class="fw-bold text-primary">Menetapkan engguna Peran </p>
                     </div>
                     <!-- Add user form -->
                     <div class="divider">

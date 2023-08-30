@@ -1,5 +1,5 @@
 <x-layout>
-    <x-slot name="title">Account</x-slot>
+    <x-slot name="title">Profil Pengguna</x-slot>
     @include('layouts.table')
     <div class="row">
         <!-- User Sidebar -->
@@ -14,7 +14,7 @@
                             <div class="user-info text-center">
                                 <h4 class="mb-2">{{ $user->name }}</h4>
                                 @foreach ($user->roles as $role)
-                                    <span class="badge bg-label-secondary">{{ $role->name }}</span>
+                                    <span class="badge text-primary bg-label-secondary">{{ $role->name }}</span>
                                 @endforeach
                             </div>
                         </div>
@@ -38,10 +38,10 @@
                                     class="badge bg-label-{{ $user->status == 0 ? 'danger' : 'success' }}">{{ $user->status == 0 ? 'NON ACTIVE' : 'ACTIVE' }}</span>
                             </li>
                             <li class="mb-3">
-                                <span class="fw-medium me-2">Role:</span>
+                                <span class="fw-medium me-2">Peran:</span>
                                 <span>
                                     @foreach ($user->roles as $role)
-                                        <span class="badge bg-label-secondary">{{ $role->name }}</span>
+                                        <span class="badge text-primary bg-label-secondary">{{ $role->name }}</span>
                                     @endforeach
                                 </span>
                             </li>
@@ -50,7 +50,7 @@
                                 <span>{{ $user->address }}</span>
                             </li>
                             <li class="mb-3">
-                                <span class="fw-medium me-2">Contact:</span>
+                                <span class="fw-medium me-2">Kontak:</span>
                                 <span>{{ $user->telp }}</span>
                             </li>
                         </ul>
@@ -102,13 +102,13 @@
                 <ul class="nav nav-pills flex-column flex-md-row mb-3">
                     <li class="nav-item"><a type="button" class="nav-link active" role="tab" data-bs-toggle="tab"
                             data-bs-target="#navs-pills-top-home" aria-controls="navs-pills-top-home"
-                            aria-selected="true"><i class="bx bx-detail me-1"></i>Permisssions</a></li>
+                            aria-selected="true"><i class="bx bx-detail me-1"></i>Perizinan</a></li>
                     <li class="nav-item"><a type="button" class="nav-link" role="tab" data-bs-toggle="tab"
                             data-bs-target="#navs-pills-top-profile" aria-controls="navs-pills-top-profile"
-                            aria-selected="true"><i class="bx bx-lock-alt me-1"></i>Security</a></li>
+                            aria-selected="true"><i class="bx bx-lock-alt me-1"></i>Keamanan</a></li>
                     <li class="nav-item"><a type="button" class="nav-link" role="tab" data-bs-toggle="tab"
                             data-bs-target="#navs-pills-top-password" aria-controls="navs-pills-top-password"
-                            aria-selected="true"><i class="bx bx-user me-1"></i>Account</a></li>
+                            aria-selected="true"><i class="bx bx-user me-1"></i>Profil</a></li>
                 </ul>
                 <div class="tab-pane fade show active" id="navs-pills-top-home" role="tabpanel">
                     <div class="card">
@@ -138,7 +138,7 @@
                 </div>
                 <div class="tab-pane fade" id="navs-pills-top-profile" role="tabpanel">
                     <div class="card mb-4">
-                        <h5 class="card-header">Change Password</h5>
+                        <h5 class="card-header">Ubah Kata Sandi</h5>
                         <div class="card-body">
                             <form id="formChangePassword" method="POST" onsubmit="return false"
                                 class="fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
@@ -149,7 +149,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="mb-3 col-12 col-sm-6">
-                                        <label class="form-label" for="newPassword">New Password</label>
+                                        <label class="form-label" for="newPassword">Kata sansi baru</label>
                                         <div class="input-group input-group-merge has-validation">
                                             <input class="form-control" type="password" id="newPassword"
                                                 name="newPassword" placeholder="············">
@@ -162,7 +162,8 @@
                                     </div>
 
                                     <div class="mb-3 col-12 col-sm-6">
-                                        <label class="form-label" for="confirmPassword">Confirm New Password</label>
+                                        <label class="form-label" for="confirmPassword">Konfirmasi Kata Sandi
+                                            baru</label>
                                         <div class="input-group input-group-merge has-validation">
                                             <input class="form-control" type="password" name="confirmPassword"
                                                 id="confirmPassword" placeholder="············">
@@ -174,7 +175,7 @@
                                         @enderror
                                     </div>
                                     <div>
-                                        <button type="submit" class="btn btn-primary me-2">Change Password</button>
+                                        <button type="submit" class="btn btn-primary me-2">Ubah</button>
                                     </div>
                                 </div>
                                 <input type="hidden">
@@ -184,7 +185,7 @@
                 </div>
                 <div class="tab-pane fade" id="navs-pills-top-password" role="tabpanel">
                     <div class="card">
-                        <h5 class="card-header">Change Profile</h5>
+                        <h5 class="card-header">Ubah Profil</h5>
                         <div class="card-body">
                             @include('adm.users.edit')
                         </div>

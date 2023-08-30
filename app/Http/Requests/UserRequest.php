@@ -24,11 +24,11 @@ class UserRequest extends FormRequest
      */
     public function rules()
     {
-        $userId = Route::current()->parameter('user'); // Assuming your route parameter is named 'user'
+        // $userId = Route::current()->parameter('user'); // Assuming your route parameter is named 'user'
 
         return [
             'name' => 'required|string|max:255|min:5',
-            'email' => 'required|email|unique:users,email,'.$userId,
+            'email' => 'required|email|unique:users,email,' . $this->id,
             'telp' => 'required|string|min:11',
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif',
             'address' => 'nullable|string|max:255|min:6',
