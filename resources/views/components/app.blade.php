@@ -66,366 +66,11 @@
             style="display: none; visibility: hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-
-
-
-
-
-
     <script src="/assets/vendor/js/dropdown-hover.js"></script>
     <script src="/assets/vendor/js/mega-dropdown.js"></script>
 
     <!-- Navbar: Start -->
-    <nav class="layout-navbar shadow-none py-0">
-        <div class="container">
-            <div class="navbar navbar-expand-lg landing-navbar px-3 px-md-4 ">
-                <!-- Menu logo wrapper: Start -->
-                <div class="navbar-brand app-brand demo d-flex py-0 me-4">
-                    <!-- Mobile menu toggle: Start-->
-                    <button class="navbar-toggler border-0 px-0 me-2" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="tf-icons bx bx-menu bx-sm align-middle"></i>
-                    </button>
-                    <!-- Mobile menu toggle: End-->
-                    <a href="landing-page.html" class="app-brand-link">
-                        <span class="app-brand-logo demo">
-
-                            <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <defs>
-                                    <path
-                                        d="M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z"
-                                        id="path-1"></path>
-                                    <path
-                                        d="M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z"
-                                        id="path-3"></path>
-                                    <path
-                                        d="M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z"
-                                        id="path-4"></path>
-                                    <path
-                                        d="M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z"
-                                        id="path-5"></path>
-                                </defs>
-                                <g id="g-app-brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)">
-                                        <g id="Icon" transform="translate(27.000000, 15.000000)">
-                                            <g id="Mask" transform="translate(0.000000, 8.000000)">
-                                                <mask id="mask-2" fill="white">
-                                                    <use xlink:href="#path-1"></use>
-                                                </mask>
-                                                <use fill="#696cff" xlink:href="#path-1"></use>
-                                                <g id="Path-3" mask="url(#mask-2)">
-                                                    <use fill="#696cff" xlink:href="#path-3"></use>
-                                                    <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use>
-                                                </g>
-                                                <g id="Path-4" mask="url(#mask-2)">
-                                                    <use fill="#696cff" xlink:href="#path-4"></use>
-                                                    <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4">
-                                                    </use>
-                                                </g>
-                                            </g>
-                                            <g id="Triangle"
-                                                transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) ">
-                                                <use fill="#696cff" xlink:href="#path-5"></use>
-                                                <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </g>
-                            </svg>
-
-                        </span>
-                        <span class="app-brand-text demo menu-text fw-bold ms-2 ps-1">Sneat</span>
-                    </a>
-                </div>
-                <!-- Menu logo wrapper: End -->
-                <!-- Menu wrapper: Start -->
-                <div class="collapse navbar-collapse landing-nav-menu" id="navbarSupportedContent">
-                    <button class="navbar-toggler border-0 text-heading position-absolute end-0 top-0 scaleX-n1-rtl"
-                        type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="tf-icons bx bx-x bx-sm"></i>
-                    </button>
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link fw-medium" aria-current="page"
-                                href="landing-page.html#landingHero">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-medium" href="landing-page.html#landingFeatures">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-medium" href="landing-page.html#landingTeam">Team</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-medium" href="landing-page.html#landingFAQ">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-medium" href="landing-page.html#landingContact">Contact us</a>
-                        </li>
-                        <li class="nav-item mega-dropdown
-">
-                            <a href="javascript:void(0);"
-                                class="nav-link dropdown-toggle navbar-ex-14-mega-dropdown mega-dropdown"
-                                aria-expanded="false" data-bs-toggle="mega-dropdown" data-trigger="hover">
-                                <span data-i18n="Pages" class="fw-medium">Pages</span>
-                            </a>
-                            <div class="dropdown-menu p-4">
-                                <div class="row gy-4">
-                                    <div class="col-12 col-lg">
-                                        <div class="h6 d-flex align-items-center mb-2 mb-lg-3">
-                                            <div class="avatar avatar-sm flex-shrink-0 me-2">
-                                                <span class="avatar-initial rounded bg-label-primary"><i
-                                                        class='bx bx-grid-alt'></i></span>
-                                            </div>
-                                            <span class="ps-1">Other</span>
-                                        </div>
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link" href="pricing-page.html">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    <span data-i18n="Pricing">Pricing</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link" href="payment-page.html">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    <span data-i18n="Payment">Payment</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link" href="checkout-page.html">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    <span data-i18n="Checkout">Checkout</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="help-center-landing.html">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    <span data-i18n="Help Center">Help Center</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-12 col-lg">
-                                        <div class="h6 d-flex align-items-center mb-2 mb-lg-3">
-                                            <div class="avatar avatar-sm flex-shrink-0 me-2">
-                                                <span class="avatar-initial rounded bg-label-primary"><i
-                                                        class='bx bx-lock-open'></i></span>
-                                            </div>
-                                            <span class="ps-1">Auth Demo</span>
-                                        </div>
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/auth-login-basic.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Login (Basic)
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/auth-login-cover.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Login (Cover)
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/auth-register-basic.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Register (Basic)
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/auth-register-cover.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Register (Cover)
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/auth-register-multisteps.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Register (Multi-steps)
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/auth-forgot-password-basic.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Forgot Password (Basic)
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/auth-forgot-password-cover.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Forgot Password (Cover)
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/auth-reset-password-basic.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Reset Password (Basic)
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/auth-reset-password-cover.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Reset Password (Cover)
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-12 col-lg">
-                                        <div class="h6 d-flex align-items-center mb-2 mb-lg-3">
-                                            <div class="avatar avatar-sm flex-shrink-0 me-2">
-                                                <span class="avatar-initial rounded bg-label-primary"><i
-                                                        class='bx bx-image-alt'></i></span>
-                                            </div>
-                                            <span class="ps-1">Other</span>
-                                        </div>
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/pages-misc-error.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Error
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/pages-misc-under-maintenance.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Under Maintenance
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/pages-misc-comingsoon.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Coming Soon
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/pages-misc-not-authorized.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Not Authorized
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/auth-verify-email-basic.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Verify Email (Basic)
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/auth-verify-email-cover.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Verify Email (Cover)
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/auth-two-steps-basic.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Two Steps (Basic)
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link mega-dropdown-link"
-                                                    href="../vertical-menu-template/auth-two-steps-cover.html"
-                                                    target="_blank">
-                                                    <i class='bx bx-radio-circle me-2'></i>
-                                                    Two Steps (Cover)
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-4 d-none d-lg-block">
-                                        <div class="bg-body nav-img-col p-2">
-                                            <img src="/assets/img/front-pages/misc/nav-item-col-img.png"
-                                                alt="nav item col image" class="w-100">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-medium" href="../vertical-menu-template/index.html"
-                                target="_blank">Admin</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="landing-menu-overlay d-lg-none"></div>
-                <!-- Menu wrapper: End -->
-                <!-- Toolbar: Start -->
-                <ul class="navbar-nav flex-row align-items-center ms-auto">
-
-                    <!-- Style Switcher -->
-                    <li class="nav-item dropdown-style-switcher dropdown me-2 me-xl-0">
-                        <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
-                            data-bs-toggle="dropdown">
-                            <i class='bx bx-sm'></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end dropdown-styles">
-                            <li>
-                                <a class="dropdown-item" href="javascript:void(0);" data-theme="light">
-                                    <span class="align-middle"><i class='bx bx-sun me-2'></i>Light</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="javascript:void(0);" data-theme="dark">
-                                    <span class="align-middle"><i class="bx bx-moon me-2"></i>Dark</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="javascript:void(0);" data-theme="system">
-                                    <span class="align-middle"><i class="bx bx-desktop me-2"></i>System</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- / Style Switcher-->
-
-
-                    <!-- navbar button: Start -->
-                    <li>
-                        <a href="../vertical-menu-template/auth-login-cover.html" class="btn btn-primary"
-                            target="_blank"><span class="tf-icons bx bx-user me-md-1"></span><span
-                                class="d-none d-md-block">Login/Register</span></a>
-                    </li>
-                    <!-- navbar button: End -->
-                </ul>
-                <!-- Toolbar: End -->
-            </div>
-        </div>
-    </nav>
+   <x-nav></x-nav>
     <!-- Navbar: End -->
 
 
@@ -444,20 +89,16 @@
                             Production-ready & easy to use Admin Template<br class="d-none d-lg-block" />
                             for Reliability and Customizability.
                         </h2>
-                        <div class="landing-hero-btn d-inline-block position-relative">
-                            <span class="hero-btn-item position-absolute d-none d-md-flex text-heading">Join community
-                                <img src="/assets/img/avatars/1.png" alt="Join community arrow"
-                                    class="scaleX-n1-rtl" /></span>
-                            <a href="#landingPricing" class="btn btn-primary">Get early access</a>
-                        </div>
+
                     </div>
                     <div id="heroDashboardAnimation" class="hero-animation-img">
                         <a href="/" target="_blank">
                             <div id="heroAnimationImg" class="position-relative hero-dashboard-img">
-                                <img src="/assets/img/avatars/1.png" alt="hero dashboard" class="animation-img"
+                                <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                    alt="hero dashboard" class="animation-img"
                                     data-app-light-img="front-pages/landing-page/hero-dashboard-light.png"
                                     data-app-dark-img="front-pages/landing-page/hero-dashboard-dark.png" />
-                                <img src="/assets/img/front-pages/landing-page/hero-elements-light.png"
+                                <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
                                     alt="hero elements"
                                     class="position-absolute hero-elements-img animation-img top-0 start-0"
                                     data-app-light-img="front-pages/landing-page/hero-elements-light.png"
@@ -486,7 +127,8 @@
                 <div class="features-icon-wrapper row gx-0 gy-4 g-sm-5">
                     <div class="col-lg-4 col-sm-6 text-center features-icon-box">
                         <div class="text-center mb-3">
-                            <img src="/assets/img/front-pages/icons/laptop.png" alt="laptop charging" />
+                            <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                width="50%" alt="laptop charging" />
                         </div>
                         <h5 class="mb-3">Quality Code</h5>
                         <p class="features-icon-description">
@@ -495,7 +137,8 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 text-center features-icon-box">
                         <div class="text-center mb-3">
-                            <img src="/assets/img/front-pages/icons/rocket.png" alt="transition up" />
+                            <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                width="50%" alt="transition up" />
                         </div>
                         <h5 class="mb-3">Continuous Updates</h5>
                         <p class="features-icon-description">
@@ -504,7 +147,8 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 text-center features-icon-box">
                         <div class="text-center mb-3">
-                            <img src="/assets/img/front-pages/icons/paper.png" alt="edit" />
+                            <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                width="50%" alt="edit" />
                         </div>
                         <h5 class="mb-3">Stater-Kit</h5>
                         <p class="features-icon-description">
@@ -513,7 +157,8 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 text-center features-icon-box">
                         <div class="text-center mb-3">
-                            <img src="/assets/img/front-pages/icons/check.png" alt="3d select solid" />
+                            <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                width="50%" alt="3d select solid" />
                         </div>
                         <h5 class="mb-3">API Ready</h5>
                         <p class="features-icon-description">
@@ -522,7 +167,8 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 text-center features-icon-box">
                         <div class="text-center mb-3">
-                            <img src="/assets/img/front-pages/icons/user.png" alt="lifebelt" />
+                            <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                width="50%" alt="lifebelt" />
                         </div>
                         <h5 class="mb-3">Excellent Support</h5>
                         <p class="features-icon-description">An easy-to-follow doc with lots of references and code
@@ -530,7 +176,8 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 text-center features-icon-box">
                         <div class="text-center mb-3">
-                            <img src="/assets/img/front-pages/icons/keyboard.png" alt="google docs" />
+                            <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564.png"
+                                width="50%" alt="google docs" />
                         </div>
                         <h5 class="mb-3">Well Documented</h5>
                         <p class="features-icon-description">An easy-to-follow doc with lots of references and code
@@ -574,7 +221,7 @@
                                             <div
                                                 class="card-body text-body d-flex flex-column justify-content-between h-100">
                                                 <div class="mb-3">
-                                                    <img src="/assets/img/front-pages/branding/logo-1.png"
+                                                    <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564s"
                                                         alt="client logo" class="client-logo img-fluid" />
                                                 </div>
                                                 <p>
@@ -591,8 +238,8 @@
                                                 </div>
                                                 <div class="d-flex align-items-center">
                                                     <div class="avatar me-2 avatar-sm">
-                                                        <img src="/assets/img/avatars/1.png" alt="Avatar"
-                                                            class="rounded-circle" />
+                                                        <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                                            alt="Avatar" class="rounded-circle" />
                                                     </div>
                                                     <div>
                                                         <h6 class="mb-0">Cecilia Payne</h6>
@@ -607,7 +254,7 @@
                                             <div
                                                 class="card-body text-body d-flex flex-column justify-content-between h-100">
                                                 <div class="mb-3">
-                                                    <img src="/assets/img/front-pages/branding/logo-2.png"
+                                                    <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564s"
                                                         alt="client logo" class="client-logo img-fluid" />
                                                 </div>
                                                 <p>
@@ -624,8 +271,8 @@
                                                 </div>
                                                 <div class="d-flex align-items-center">
                                                     <div class="avatar me-2 avatar-sm">
-                                                        <img src="/assets/img/avatars/2.png" alt="Avatar"
-                                                            class="rounded-circle" />
+                                                        <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                                            alt="Avatar" class="rounded-circle" />
                                                     </div>
                                                     <div>
                                                         <h6 class="mb-0">Eugenia Moore</h6>
@@ -640,7 +287,7 @@
                                             <div
                                                 class="card-body text-body d-flex flex-column justify-content-between h-100">
                                                 <div class="mb-3">
-                                                    <img src="/assets/img/front-pages/branding/logo-3.png"
+                                                    <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564s"
                                                         alt="client logo" class="client-logo img-fluid" />
                                                 </div>
                                                 <p>
@@ -657,8 +304,8 @@
                                                 </div>
                                                 <div class="d-flex align-items-center">
                                                     <div class="avatar me-2 avatar-sm">
-                                                        <img src="/assets/img/avatars/3.png" alt="Avatar"
-                                                            class="rounded-circle" />
+                                                        <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                                            alt="Avatar" class="rounded-circle" />
                                                     </div>
                                                     <div>
                                                         <h6 class="mb-0">Curtis Fletcher</h6>
@@ -673,7 +320,7 @@
                                             <div
                                                 class="card-body text-body d-flex flex-column justify-content-between h-100">
                                                 <div class="mb-3">
-                                                    <img src="/assets/img/front-pages/branding/logo-4.png"
+                                                    <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564s"
                                                         alt="client logo" class="client-logo img-fluid" />
                                                 </div>
                                                 <p>
@@ -690,8 +337,8 @@
                                                 </div>
                                                 <div class="d-flex align-items-center">
                                                     <div class="avatar me-2 avatar-sm">
-                                                        <img src="/assets/img/avatars/4.png" alt="Avatar"
-                                                            class="rounded-circle" />
+                                                        <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                                            alt="Avatar" class="rounded-circle" />
                                                     </div>
                                                     <div>
                                                         <h6 class="mb-0">Sara Smith</h6>
@@ -706,7 +353,7 @@
                                             <div
                                                 class="card-body text-body d-flex flex-column justify-content-between h-100">
                                                 <div class="mb-3">
-                                                    <img src="/assets/img/front-pages/branding/logo-5.png"
+                                                    <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564s"
                                                         alt="client logo" class="client-logo img-fluid" />
                                                 </div>
                                                 <p>
@@ -723,8 +370,8 @@
                                                 </div>
                                                 <div class="d-flex align-items-center">
                                                     <div class="avatar me-2 avatar-sm">
-                                                        <img src="/assets/img/avatars/5.png" alt="Avatar"
-                                                            class="rounded-circle" />
+                                                        <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                                            alt="Avatar" class="rounded-circle" />
                                                     </div>
                                                     <div>
                                                         <h6 class="mb-0">Eugenia Moore</h6>
@@ -739,7 +386,7 @@
                                             <div
                                                 class="card-body text-body d-flex flex-column justify-content-between h-100">
                                                 <div class="mb-3">
-                                                    <img src="/assets/img/front-pages/branding/logo-6.png"
+                                                    <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564s"
                                                         alt="client logo" class="client-logo img-fluid" />
                                                 </div>
                                                 <p>
@@ -756,8 +403,8 @@
                                                 </div>
                                                 <div class="d-flex align-items-center">
                                                     <div class="avatar me-2 avatar-sm">
-                                                        <img src="/assets/img/avatars/1.png" alt="Avatar"
-                                                            class="rounded-circle" />
+                                                        <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                                            alt="Avatar" class="rounded-circle" />
                                                     </div>
                                                     <div>
                                                         <h6 class="mb-0">Sara Smith</h6>
@@ -783,28 +430,33 @@
                     <div class="swiper" id="swiper-clients-logos">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="/assets/img/front-pages/branding/logo_1-light.png" alt="client logo"
-                                    class="client-logo" data-app-light-img="front-pages/branding/logo_1-light.png"
+                                <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                    alt="client logo" class="client-logo"
+                                    data-app-light-img="front-pages/branding/logo_1-light.png"
                                     data-app-dark-img="front-pages/branding/logo_1-dark.png" />
                             </div>
                             <div class="swiper-slide">
-                                <img src="/assets/img/front-pages/branding/logo_2-light.png" alt="client logo"
-                                    class="client-logo" data-app-light-img="front-pages/branding/logo_2-light.png"
+                                <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                    alt="client logo" class="client-logo"
+                                    data-app-light-img="front-pages/branding/logo_2-light.png"
                                     data-app-dark-img="front-pages/branding/logo_2-dark.png" />
                             </div>
                             <div class="swiper-slide">
-                                <img src="/assets/img/front-pages/branding/logo_3-light.png" alt="client logo"
-                                    class="client-logo" data-app-light-img="front-pages/branding/logo_3-light.png"
+                                <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                    alt="client logo" class="client-logo"
+                                    data-app-light-img="front-pages/branding/logo_3-light.png"
                                     data-app-dark-img="front-pages/branding/logo_3-dark.png" />
                             </div>
                             <div class="swiper-slide">
-                                <img src="/assets/img/front-pages/branding/logo_4-light.png" alt="client logo"
-                                    class="client-logo" data-app-light-img="front-pages/branding/logo_4-light.png"
+                                <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                    alt="client logo" class="client-logo"
+                                    data-app-light-img="front-pages/branding/logo_4-light.png"
                                     data-app-dark-img="front-pages/branding/logo_4-dark.png" />
                             </div>
                             <div class="swiper-slide">
-                                <img src="/assets/img/front-pages/branding/logo_5-light.png" alt="client logo"
-                                    class="client-logo" data-app-light-img="front-pages/branding/logo_5-light.png"
+                                <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                    alt="client logo" class="client-logo"
+                                    data-app-light-img="front-pages/branding/logo_5-light.png"
                                     data-app-dark-img="front-pages/branding/logo_5-dark.png" />
                             </div>
                         </div>
@@ -827,7 +479,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card mt-3 mt-lg-0 shadow-none">
                             <div class="bg-label-primary position-relative team-image-box">
-                                <img src="/assets/img/front-pages/landing-page/team-member-1.png"
+                                <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
                                     class="position-absolute card-img-position bottom-0 start-50 scaleX-n1-rtl img-fluid"
                                     alt="human image" />
                             </div>
@@ -840,7 +492,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card mt-3 mt-lg-0 shadow-none">
                             <div class="bg-label-info position-relative team-image-box">
-                                <img src="/assets/img/front-pages/landing-page/team-member-2.png"
+                                <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
                                     class="position-absolute card-img-position bottom-0 start-50 scaleX-n1-rtl img-fluid"
                                     alt="human image" />
                             </div>
@@ -853,7 +505,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card mt-3 mt-lg-0 shadow-none">
                             <div class="bg-label-danger position-relative team-image-box">
-                                <img src="/assets/img/front-pages/landing-page/team-member-3.png"
+                                <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
                                     class="position-absolute card-img-position bottom-0 start-50 scaleX-n1-rtl img-fluid"
                                     alt="human image" />
                             </div>
@@ -866,7 +518,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card mt-3 mt-lg-0 shadow-none">
                             <div class="bg-label-success position-relative team-image-box">
-                                <img src="/assets/img/front-pages/landing-page/team-member-4.png"
+                                <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
                                     class="position-absolute card-img-position bottom-0 start-50 scaleX-n1-rtl img-fluid"
                                     alt="human image" />
                             </div>
@@ -905,11 +557,7 @@
                             </span>
                             <span class="switch-label">Pay Annual</span>
                         </label>
-                        <div class="pricing-plans-item position-absolute d-flex">
-                            <img src="/assets/img/front-pages/icons/pricing-plans-arrow.png" alt="pricing plans arrow"
-                                class="scaleX-n1-rtl" />
-                            <span class="fw-semibold mt-2 ms-1"> Save 25%</span>
-                        </div>
+
                     </div>
                 </div>
                 <div class="row gy-4 pt-lg-3">
@@ -918,8 +566,8 @@
                         <div class="card">
                             <div class="card-header">
                                 <div class="text-center">
-                                    <img src="/assets/img/front-pages/icons/paper-airplane.png"
-                                        alt="paper airplane icon" class="mb-4 pb-2 scaleX-n1-rtl" />
+                                    <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564.png"
+                                        width="50%" alt="paper airplane icon" class="mb-4 pb-2 scaleX-n1-rtl" />
                                     <h4 class="mb-1">Basic</h4>
                                     <div class="d-flex align-items-center justify-content-center">
                                         <span class="price-monthly h1 text-primary fw-bold mb-0">$19</span>
@@ -997,8 +645,8 @@
                         <div class="card border border-primary shadow-lg">
                             <div class="card-header">
                                 <div class="text-center">
-                                    <img src="/assets/img/front-pages/icons/plane.png" alt="plane icon"
-                                        class="mb-4 pb-2 scaleX-n1-rtl" />
+                                    <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                        width="50%" alt="plane icon" class="mb-4 pb-2 scaleX-n1-rtl" />
                                     <h4 class="mb-1">Team</h4>
                                     <div class="d-flex align-items-center justify-content-center">
                                         <span class="price-monthly h1 text-primary fw-bold mb-0">$29</span>
@@ -1076,8 +724,8 @@
                         <div class="card">
                             <div class="card-header">
                                 <div class="text-center">
-                                    <img src="/assets/img/front-pages/icons/shuttle-rocket.png"
-                                        alt="shuttle rocket icon" class="mb-4 pb-2 scaleX-n1-rtl" />
+                                    <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564-rocket.png"
+                                        width="50%" alt="shuttle rocket icon" class="mb-4 pb-2 scaleX-n1-rtl" />
                                     <h4 class="mb-1">Enterprise</h4>
                                     <div class="d-flex align-items-center justify-content-center">
                                         <span class="price-monthly h1 text-primary fw-bold mb-0">$49</span>
@@ -1161,7 +809,8 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="card border border-label-primary shadow-none">
                             <div class="card-body text-center">
-                                <img src="/assets/img/avatars/1.png" alt="laptop" class="mb-2" />
+                                <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                                    width="50%" alt="laptop" class="mb-2" />
                                 <h5 class="h2 mb-1">7.1k+</h5>
                                 <p class="fw-medium mb-0">
                                     Support Tickets<br />
@@ -1173,8 +822,8 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="card border border-label-success shadow-none">
                             <div class="card-body text-center">
-                                <img src="/assets/img/front-pages/icons/user-success.png" alt="laptop"
-                                    class="mb-2" />
+                                <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564.png"
+                                    width="50%" alt="laptop" class="mb-2" />
                                 <h5 class="h2 mb-1">50k+</h5>
                                 <p class="fw-medium mb-0">
                                     Join creatives<br />
@@ -1186,8 +835,8 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="card border border-label-info shadow-none">
                             <div class="card-body text-center">
-                                <img src="/assets/img/front-pages/icons/diamond-info.png" alt="laptop"
-                                    class="mb-2" />
+                                <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564-info.png"
+                                    width="50%" alt="laptop" class="mb-2" />
                                 <h5 class="h2 mb-1">4.8/5</h5>
                                 <p class="fw-medium mb-0">
                                     Highly Rated<br />
@@ -1199,8 +848,8 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="card border border-label-warning shadow-none">
                             <div class="card-body text-center">
-                                <img src="/assets/img/front-pages/icons/check-warning.png" alt="laptop"
-                                    class="mb-2" />
+                                <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564.png"
+                                    width="50%" alt="laptop" class="mb-2" />
                                 <h5 class="h2 mb-1">100%</h5>
                                 <p class="fw-medium mb-0">
                                     Money Back<br />
@@ -1226,7 +875,7 @@
                 <div class="row gy-5">
                     <div class="col-lg-5">
                         <div class="text-center">
-                            <img src="/assets/img/front-pages/landing-page/faq-boy-with-logos.png"
+                            <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
                                 alt="faq boy with logos" class="faq-image" />
                         </div>
                     </div>
@@ -1351,8 +1000,8 @@
                         <a href="payment-page.html" class="btn btn-primary">Get Started</a>
                     </div>
                     <div class="col-lg-6 pt-lg-5 text-center text-lg-end">
-                        <img src="/assets/img/front-pages/landing-page/cta-dashboard.png" alt="cta dashboard"
-                            class="img-fluid" />
+                        <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
+                            alt="cta dashboard" class="img-fluid" />
                     </div>
                 </div>
             </div>
@@ -1370,7 +1019,7 @@
                 <div class="row gy-4">
                     <div class="col-lg-5">
                         <div class="contact-img-box position-relative border p-2 h-100">
-                            <img src="/assets/img/front-pages/landing-page/contact-customer-service.png"
+                            <img src="https://cdn.dribbble.com/userupload/9654137/file/original-6dda94602ad308e3f57be1317601d945.png?resize=752x564"
                                 alt="contact customer service" class="contact-img w-100 scaleX-n1-rtl img-fluid" />
                             <div class="pt-3 px-4 pb-1">
                                 <div class="row gy-3 gx-md-4">
@@ -1525,7 +1174,7 @@
                         <h6 class="footer-title mb-4">Demos</h6>
                         <ul class="list-unstyled">
                             <li class="mb-3">
-                                <a href="../vertical-menu-template/" target="_blank" class="footer-link">Vertical
+                                <a href="/" target="_blank" class="footer-link">Vertical
                                     Layout</a>
                             </li>
                             <li class="mb-3">
@@ -1563,18 +1212,10 @@
                                 <a href="help-center-landing.html" class="footer-link">Help Center</a>
                             </li>
                             <li class="mb-3">
-                                <a href="../vertical-menu-template/auth-login-cover.html" target="_blank"
+                                <a href="/auth-login-cover.html" target="_blank"
                                     class="footer-link">Login/Register</a>
                             </li>
                         </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-4">
-                        <h6 class="footer-title mb-4">Download our app</h6>
-                        <a href="javascript:void(0);" class="d-block footer-link mb-3 pb-2"><img
-                                src="/assets/img/front-pages/landing-page/apple-icon.png" alt="apple icon" /></a>
-                        <a href="javascript:void(0);" class="d-block footer-link"><img
-                                src="/assets/img/front-pages/landing-page/google-play-icon.png"
-                                alt="google play icon" /></a>
                     </div>
                 </div>
             </div>
@@ -1591,28 +1232,6 @@
                     <a href="https://themeselection.com" target="_blank"
                         class="fw-medium text-white footer-link">ThemeSelection,</a>
                     <span class="footer-text"> Made with ❤️ for a better web.</span>
-                </div>
-                <div>
-                    <a href="https://github.com/themeselection" class="footer-link me-3" target="_blank">
-                        <img src="/assets/img/front-pages/icons/github-light.png" alt="github icon"
-                            data-app-light-img="front-pages/icons/github-light.png"
-                            data-app-dark-img="front-pages/icons/github-dark.png" />
-                    </a>
-                    <a href="https://www.facebook.com/ThemeSelections/" class="footer-link me-3" target="_blank">
-                        <img src="/assets/img/front-pages/icons/facebook-light.png" alt="facebook icon"
-                            data-app-light-img="front-pages/icons/facebook-light.png"
-                            data-app-dark-img="front-pages/icons/facebook-dark.png" />
-                    </a>
-                    <a href="https://twitter.com/Theme_Selection" class="footer-link me-3" target="_blank">
-                        <img src="/assets/img/front-pages/icons/twitter-light.png" alt="twitter icon"
-                            data-app-light-img="front-pages/icons/twitter-light.png"
-                            data-app-dark-img="front-pages/icons/twitter-dark.png" />
-                    </a>
-                    <a href="https://www.instagram.com/themeselection/" class="footer-link" target="_blank">
-                        <img src="/assets/img/front-pages/icons/instagram-light.png" alt="google icon"
-                            data-app-light-img="front-pages/icons/instagram-light.png"
-                            data-app-dark-img="front-pages/icons/instagram-dark.png" />
-                    </a>
                 </div>
             </div>
         </div>

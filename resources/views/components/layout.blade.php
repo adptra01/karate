@@ -119,7 +119,7 @@
 
                 <div class="menu-inner-shadow"></div>
 
-                <x-nav></x-nav>
+                <x-sidebar></x-sidebar>
             </aside>
             <!-- / Menu -->
 
