@@ -10,6 +10,7 @@ use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -71,7 +72,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $image = $data['avatar'];
-        
+
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -94,7 +95,9 @@ class RegisterController extends Controller
             $user->update([
                 'avatar' => $result->getSecurePath(),
             ]);
+            Session::flash('success', 'Pendaftaran berhasil, Selamat datang, ' . $user->name . '! ✨');
         } catch (\Throwable $th) {
+            Session::flash('error', 'Perdaftaran berhasil, tapi gambar profil gagal diupload.');
 
         }
 

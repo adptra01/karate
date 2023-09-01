@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use CloudinaryLabs\CloudinaryLaravel\MediaAlly;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
-    use HasFactory;
+    use HasFactory, MediaAlly;
 
     protected $fillable =
     [
@@ -17,4 +18,14 @@ class Event extends Model
         'description',
         'status',
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+    public function media()
+    {
+        return $this->morphMany(Media::class, 'medially');
+    }
 }

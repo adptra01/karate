@@ -12,10 +12,9 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Name</th>
-                            <th>email</th>
-                            <th>telp</th>
-                            <th>image</th>
+                            <th>thumbnail</th>
+                            <th>Nama</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -23,16 +22,18 @@
                         @foreach ($events as $no => $event)
                             <tr>
                                 <td>{{ ++$no }}.</td>
-                                <td>{{ $event }}</td>
-                                <td>{{ $event->email }}</td>
-                                <td>{{ $event->telp }}</td>
-                                <td><img src="{{ $event->image ?? 'https://source.unsplash.com/random/?karate' }}"
-                                        class="rounded-circle" width="30" height="30" alt="user image"></td>
+                                <td><img src="{{ $event->thumbnail }}" alt=""
+                                        class="avatar avatar-sm rounded-circle">
+                                </td>
+                                <td>{{ $event->name }}</td>
+                                <td><span
+                                        class="badge bg-label-{{ $event->status == 0 ? 'danger' : 'success' }}">{{ $event->status == 0 ? 'Tutup' : 'Buka' }}</span>
+                                </td>
                                 <td>
                                     <div class="d-flex gap-3 justify-content-center">
-                                        <a class="btn btn-info btn-sm" href="{{ route('users.show', $event->id) }}"
+                                        <a class="btn btn-info btn-sm" href="{{ route('events.show', $event->id) }}"
                                             role="button">Detail</a>
-                                        <form action="{{ route('users.destroy', $event->id) }}" method="post">
+                                        <form action="{{ route('events.destroy', $event->id) }}" method="post">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-danger btn-sm">Hapus</button>

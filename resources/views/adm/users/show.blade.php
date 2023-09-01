@@ -187,6 +187,11 @@
                     <div class="card">
                         <h5 class="card-header">Ubah Profil</h5>
                         <div class="card-body">
+                            <div class="alert alert-warning" role="alert">
+                                <h6 class="alert-heading mb-1">Pastikan bahwa persyaratan-persyaratan ini terpenuhi
+                                </h6>
+                                <span>Data pengguna valid</span>
+                            </div>
                             @include('adm.users.edit')
                         </div>
                     </div>

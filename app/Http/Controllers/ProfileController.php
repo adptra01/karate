@@ -60,9 +60,6 @@ class ProfileController extends Controller
         } catch (\Throwable $th) {
             return back()->with('error');
         }
-
-
-
     }
 
     public function update(ProfileUpdateRequest $request, $id)
@@ -79,12 +76,18 @@ class ProfileController extends Controller
 
     public function destroy(Request $request, $id)
     {
-        if ($request->confirmAccount == 'on') {
-            # code...
-            $user = User::find($id);
-            $user->delete();
-            return redirect()->route('welcome');
+        $request->validate([
+            'confirmAccount' => 'required'
+        ]);
+
+        $user = User::find($id);
+        $avatar = Media::find($user->media->first()->id);
+        try {
+            Cloudinary::destroy($avatar->file_name);
+        } catch (\Throwable $th) {
+            //throw $th;
         }
-        return back();
+        $user->delete();
+        return redirect()->route('welcome');
     }
 }

@@ -43,7 +43,7 @@
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->telp }}</td>
                     <td><img src="{{ $item->image ?? 'https://source.unsplash.com/random/?karate' }}"
-                            class="rounded-circle" width="30" height="30" alt="user image"></td>
+                            class="rounded-circle avatar avatar-sm" style="object-fit: cover;" alt="user image"></td>
                     <td>
                         <div class="d-flex gap-3 justify-content-center">
                             <a class="btn btn-info btn-sm" href="{{ route('users.show', $item->id) }}"
