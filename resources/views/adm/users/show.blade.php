@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <div class="user-avatar-section">
                         <div class=" d-flex align-items-center flex-column">
-                            <img class="img-fluid rounded my-4" src="{{ $user->avatar }}" height="110" width="110"
+                            <img src="{{ $user->avatar }}" class="img-fluid rounded my-4" height="110" width="110"
                                 alt="User avatar">
                             <div class="user-info text-center">
                                 <h4 class="mb-2">{{ $user->name }}</h4>
