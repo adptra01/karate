@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Media;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Services\ClaudinaryService;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
@@ -34,15 +35,17 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+    private $claudinaryService;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(ClaudinaryService $claudinaryService)
     {
         $this->middleware('guest');
+        $this->claudinaryService = $claudinaryService;
     }
 
     /**
@@ -81,24 +84,15 @@ class RegisterController extends Controller
             'address' => $data['address'],
         ]);
 
+        $result = $this->claudinaryService->uploadClaudinary($image, $user);
+
         try {
-            $result = Cloudinary::upload($image->getRealPath(), ['public_id' => 'img' . rand()]);
-
-            $media = new Media([
-                'file_url' => $result->getSecurePath(),
-                'file_name' => $result->getPublicId(),
-                'file_type' => $result->getExtension(),
-                'size' => $result->getSize(),
-            ]);
-
-            $user->media()->save($media);
             $user->update([
                 'avatar' => $result->getSecurePath(),
             ]);
             Session::flash('success', 'Pendaftaran berhasil, Selamat datang, ' . $user->name . '! ✨');
         } catch (\Throwable $th) {
             Session::flash('error', 'Perdaftaran berhasil, tapi gambar profil gagal diupload.');
-
         }
 
         Auth::login($user);
