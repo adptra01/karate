@@ -13,9 +13,6 @@
                                 alt="User avatar">
                             <div class="user-info text-center">
                                 <h4 class="mb-2">{{ $user->name }}</h4>
-                                @foreach ($user->roles as $role)
-                                    <span class="badge text-primary bg-label-secondary">{{ $role->name }}</span>
-                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -140,46 +137,7 @@
                     <div class="card mb-4">
                         <h5 class="card-header">Ubah Kata Sandi</h5>
                         <div class="card-body">
-                            <form id="formChangePassword" method="POST" onsubmit="return false"
-                                class="fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
-                                <div class="alert alert-warning" role="alert">
-                                    <h6 class="alert-heading mb-1">Pastikan bahwa persyaratan-persyaratan ini terpenuhi
-                                    </h6>
-                                    <span>Minimal 8 karakter, huruf kapital & simbol</span>
-                                </div>
-                                <div class="row">
-                                    <div class="mb-3 col-12 col-sm-6">
-                                        <label class="form-label" for="newPassword">Kata sansi baru</label>
-                                        <div class="input-group input-group-merge has-validation">
-                                            <input class="form-control" type="password" id="newPassword"
-                                                name="newPassword" placeholder="············">
-                                            <span class="input-group-text cursor-pointer"><i
-                                                    class="bx bx-hide"></i></span>
-                                        </div>
-                                        @error('newPassword')
-                                            <small class="fw-bold text-danger">{{ $message }}</small>
-                                        @enderror
-                                    </div>
-
-                                    <div class="mb-3 col-12 col-sm-6">
-                                        <label class="form-label" for="confirmPassword">Konfirmasi Kata Sandi
-                                            baru</label>
-                                        <div class="input-group input-group-merge has-validation">
-                                            <input class="form-control" type="password" name="confirmPassword"
-                                                id="confirmPassword" placeholder="············">
-                                            <span class="input-group-text cursor-pointer"><i
-                                                    class="bx bx-hide"></i></span>
-                                        </div>
-                                        @error('confirmPassword')
-                                            <small class="fw-bold text-danger">{{ $message }}</small>
-                                        @enderror
-                                    </div>
-                                    <div>
-                                        <button type="submit" class="btn btn-primary me-2">Ubah</button>
-                                    </div>
-                                </div>
-                                <input type="hidden">
-                            </form>
+                            @include('adm.users.password')
                         </div>
                     </div>
                 </div>

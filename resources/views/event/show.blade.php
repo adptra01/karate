@@ -56,10 +56,12 @@
                                     <div class="col-12 col-md-4 ps-md-3 ps-lg-5 pt-3 pt-md-0">
                                         <div class="d-flex justify-content-end align-items-center"
                                             style="position: relative;">
-                                            <input type="hidden" name="status"
-                                                value="{{ $event->status == 1 ? '0' : '1' }}">
-                                            <button
-                                                class="btn btn-label-{{ $event->status == 0 ? 'success' : 'danger' }}">{{ $event->status == 0 ? 'Buka Acara' : 'Tutup Acara' }}</button>
+                                            <form action="{{ route('events.status', $event->id) }}" method="post">
+                                                @csrf
+                                                @method('put')
+                                                <button type="submit"
+                                                    class="btn btn-label-{{ $event->status == 0 ? 'success' : 'danger' }}">{{ $event->status == 0 ? 'Buka Acara' : 'Tutup Acara' }}</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

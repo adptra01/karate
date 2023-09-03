@@ -24,9 +24,11 @@ class EventRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:5',
-            'location' => 'required|min:5',
+            'name' => 'required|min:5|max:225',
+            'location' => 'required|min:5|max:200',
             'description' => 'required|min:10',
+            'status' => 'boolean',
+            'thumbnail' => '',
         ];
     }
 }

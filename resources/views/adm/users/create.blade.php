@@ -7,7 +7,7 @@
 <div class="modal fade" id="users" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <form action="{{ route('users.store') }}" method="POST">
+            <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-header">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
@@ -17,7 +17,7 @@
                     <div class="text-center mb-4">
                         <h3 class="role-title fw-bold">Tambahkan Pengguna Baru
                         </h3>
-                        <p class="fw-bold text-primary">Menetapkan engguna Peran </p>
+                        <p class="fw-bold text-primary">Tetapkan penggunaan peran</p>
                     </div>
                     <!-- Add user form -->
                     <div class="divider">
@@ -56,7 +56,8 @@
                             <div class="mb-3">
                                 <label for="avatar" class="form-label">avatar</label>
                                 <input type="file" class="form-control" name="avatar" id="avatar"
-                                    aria-describedby="helpId" placeholder="Enter user avatar">
+                                    aria-describedby="helpId" placeholder="Enter user avatar"
+                                    accept="image/png, image/jpeg">
                                 @error('avatar')
                                     <small id="helpId" class="form-text text-danger">{{ $message }}</small>
                                 @enderror

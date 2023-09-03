@@ -247,11 +247,17 @@
                     <div class="container-xxl flex-grow-1 container-p-y">
                         @if (session('success'))
                             <div class="alert alert-primary" role="alert">
-                                <strong>🔔 OKE!</strong> Proses Berhasil.
+                                {{ session('success') }}
+                            </div>
+                        @elseif (session('warning'))
+                            <div class="alert alert-warning" role="alert">
+                                {{ session('warning') }}
                             </div>
                         @elseif ($errors->any())
                             <div class="alert alert-danger" role="alert">
-                                <strong>🔔 HAAA!</strong> Proses Gagal.
+                                @foreach ($errors->all() as $error)
+                                    <span>{{ $error }} </span>
+                                @endforeach
                             </div>
                         @endif
                         <h4 class="fw-bold">{{ $title ?? '' }}</h4>

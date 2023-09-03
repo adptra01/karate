@@ -1,4 +1,4 @@
-<form action="{{ route('events.update', $event->id) }}" method="post">
+<form action="{{ route('events.update', $event->id) }}" method="post" enctype="multipart/form-data">
     @csrf
     @method('put')
     <div class="mb-4">
@@ -36,8 +36,8 @@
     </div>
     <div class="mb-3">
         <label for="thumbnail" class="form-label">Thumbnail acara</label>
-        <input type="file" class="form-control" name="thumbnail" id="thumbnail" accept="image/*" placeholder="thumbnail"
-            aria-describedby="fileHelpId">
+        <input type="file" class="form-control" name="thumbnail" id="thumbnail" accept="image/*"
+            placeholder="thumbnail" aria-describedby="fileHelpId">
         @error('thumbnail')
             <small id="helpId" class="form-text text-danger fw-bold">{{ $message }}</small>
         @enderror

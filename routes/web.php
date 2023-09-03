@@ -46,6 +46,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/{id}', [UserController::class, 'show'])->name('users.show');
         Route::put('/{id}', [UserController::class, 'update'])->name('users.update');
         Route::delete('/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+        Route::put('/{id}/password', [UserController::class, 'password'])->name('users.password');
     });
     Route::prefix('account')->group(function () {
         Route::get('/{slug}/profile', [ProfileController::class, 'index'])->name('profile.index');
@@ -55,4 +56,5 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::resource('events', EventController::class);
+    Route::put('/events/{id}/status', [EventController::class, 'status'])->name('events.status');
 });

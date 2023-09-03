@@ -25,8 +25,10 @@ class ProfileUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['string', 'max:255'],
-            'email' => ['email', 'max:255', 'unique:users,email,'] . $this->id,
+            'name' => 'required|string|max:255|min:5',
+            'email' => 'required|email|unique:users,email,' . $this->id,
+            'telp' => 'required|string|min:11|max:12',
+            'address' => 'nullable|string|max:255|min:6',
         ];
     }
 }

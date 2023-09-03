@@ -63,6 +63,7 @@ class RegisterController extends Controller
             'avatar' => ['required'],
             'telp' => ['required', 'min:11', 'numeric', 'digits_between:10,13', 'unique:users,telp'],
             'address' => ['required', 'min:5', 'string', 'max:200'],
+            'agree' => ['required'],
         ]);
     }
 
@@ -90,9 +91,9 @@ class RegisterController extends Controller
             $user->update([
                 'avatar' => $result->getSecurePath(),
             ]);
-            Session::flash('success', 'Pendaftaran berhasil, Selamat datang, ' . $user->name . '! ✨');
+            Session::flash('success', 'Pendaftaran berhasil, ' . $user->name . '! ✨');
         } catch (\Throwable $th) {
-            Session::flash('error', 'Perdaftaran berhasil, tapi gambar profil gagal diupload.');
+            Session::flash('warning', 'Perdaftaran berhasil, tapi gambar profil gagal diupload.');
         }
 
         Auth::login($user);
