@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
 use App\Http\Requests\UserRequest;
 use App\Models\Media;
@@ -9,6 +9,8 @@ use App\Services\ClaudinaryService;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
+use App\Http\Controllers\Controller;
+
 
 class UserController extends Controller
 {

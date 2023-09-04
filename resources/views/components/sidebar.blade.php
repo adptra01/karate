@@ -35,7 +35,7 @@
 
     <li class="menu-item">
         <a href="{{ route('events.index') }}" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+            <i class="menu-icon tf-icons bx bxs-calendar"></i>
             <div data-i18n="Event">Events</div>
         </a>
     </li>

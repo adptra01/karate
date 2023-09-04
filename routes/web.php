@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\EventController;
+use App\Http\Controllers\Event\EventController;
+use App\Http\Controllers\Event\OrganizerController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PermissionController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\User\ProfileController;
+use App\Http\Controllers\User\PermissionController;
+use App\Http\Controllers\User\RoleController;
+use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -55,6 +56,13 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/{id}', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
 
-    Route::resource('events', EventController::class);
+    Route::get('events', [EventController::class, 'index'])->name('events.index');
+    Route::post('events', [EventController::class, 'store'])->name('events.store');
+    Route::get('events/{id}', [EventController::class, 'show'])->name('events.show');
+    Route::put('events/{id}', [EventController::class, 'update'])->name('events.update');
+    Route::delete('events/{id}', [EventController::class, 'destroy'])->name('events.destroy');
+
     Route::put('/events/{id}/status', [EventController::class, 'status'])->name('events.status');
+
+    Route::resource('organizers', OrganizerController::class);
 });

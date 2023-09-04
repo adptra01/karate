@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Event;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\EventRequest;
 use App\Models\Event;
-use App\Models\Media;
+use App\Models\User;
 use App\Services\ClaudinaryService;
-use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
-use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
@@ -36,9 +35,9 @@ class EventController extends Controller
         try {
             $result = $this->claudinaryService->uploadClaudinary($image, $event);
             $event->update(['thumbnail' => $result->getSecurePath()]);
-            return back()->with('success', 'Data acara baru berhasil ditambahkan.');
+            return redirect()->route('events.show', $event->id)->with('success', 'Data acara baru berhasil ditambahkan.');
         } catch (\Throwable $th) {
-            return back()->with('warning', 'Data acara baru berhasil ditambahkan, tetapi terdapat kesalahan pada pengunggahan thumbnail acara.');
+            return redirect()->route('events.show', $event->id)->with('warning', 'Data acara baru berhasil ditambahkan, tetapi terdapat kesalahan pada pengunggahan thumbnail acara.');
         }
     }
 
@@ -46,6 +45,7 @@ class EventController extends Controller
     {
         return view('event.show', [
             'event' => event::find($id),
+            'users' => User::get(),
         ]);
     }
 

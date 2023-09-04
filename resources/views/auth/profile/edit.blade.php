@@ -1,16 +1,52 @@
-<form action="{{ route('profile.avatar', Auth()->user()->id) }}" method="post" enctype="multipart/form-data">
+<form id="formAccountSettings" method="POST" class="fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate"
+    action="{{ route('profile.update', Auth()->user()->id) }}">
     @csrf
     @method('PUT')
-    <label for="upload" class="btn btn-light me-2 mb-4" tabindex="0">
-        <span class="d-none d-sm-block">Upload new photo</span>
-        <i class="bx bx-upload d-block d-sm-none"></i>
-        <input type="file" id="upload" class="account-file-input" hidden="" name="avatar"
-            accept="image/png, image/jpeg">
-    </label>
-    <button type="submit" class="btn btn-primary account-image-reset mb-4">
-        <i class="bx bx-reset d-block d-sm-none"></i>
-        <span class="d-none d-sm-block">Submit</span>
-    </button>
+    <div class="row">
+        <div class="mb-3 col-md-6 fv-plugins-icon-container">
+            <label for="name" class="form-label">Nama</label>
+            <input class="form-control @error('name')
+        invalid
+        @enderror" type="text" id="name"
+                value="{{ auth()->user()->name }}" name="name">
+            @error('name')
+                <small class="text-danger fw-bold">{{ $message }}</small>
+            @enderror
+        </div>
+        <div class="mb-3 col-md-6 fv-plugins-icon-container">
+            <label for="email" class="form-label">email</label>
+            <input class="form-control @error('email')
+        invalid
+        @enderror" type="email" id="email"
+                value="{{ auth()->user()->email }}" name="email">
+            @error('email')
+                <small class="text-danger fw-bold">{{ $message }}</small>
+            @enderror
+        </div>
+        <div class="mb-3 col-md-6 fv-plugins-icon-container">
+            <label for="telp" class="form-label">telp</label>
+            <input class="form-control @error('telp')
+        invalid
+        @enderror" type="number" id="telp"
+                value="{{ auth()->user()->telp }}" name="telp">
+            @error('telp')
+                <small class="text-danger fw-bold">{{ $message }}</small>
+            @enderror
+        </div>
+        <div class="mb-3 col-md-6 fv-plugins-icon-container">
+            <label for="address" class="form-label">address</label>
+            <input class="form-control @error('address')
+        invalid
+        @enderror" type="address"
+                id="address" value="{{ auth()->user()->address }}" name="address">
+            @error('address')
+                <small class="text-danger fw-bold">{{ $message }}</small>
+            @enderror
+        </div>
 
-    <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+    </div>
+    <div class="mt-2">
+        <button type="submit" class="btn btn-primary me-2">Simpan</button>
+        <button type="reset" class="btn btn-secondary">Reset</button>
+    </div>
 </form>
