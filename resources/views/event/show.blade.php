@@ -1,6 +1,11 @@
 <x-layout>
     <x-slot name="title">{{ $event->name }}</x-slot>
+    @push('additional-select2')
+        maximumSelectionLength: 3
+    @endpush
+
     @include('layouts.table')
+    @include('layouts.select2')
 
     <div class="flex-grow-1">
         <!-- Header -->
@@ -101,14 +106,18 @@
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="navs-pills-top-home" role="tabpanel">
-                            @include('event.show.teamsParticipants')
+                            @include('event.partials.teamsParticipants')
                         </div>
                         <div class="tab-pane fade" id="navs-pills-top-event" role="tabpanel">
                             @include('event.edit')
                         </div>
                         <div class="tab-pane fade" id="navs-pills-top-organizer" role="tabpanel">
-                            @include('event.show.addOrganizer')
-                            @include('event.show.organizer')
+                            @if ($event->users->count() > 0)
+                                @include('event.partials.updateOrganizer')
+                            @else
+                                @include('event.partials.addOrganizer')
+                            @endif
+                            @include('event.partials.organizer')
                         </div>
                     </div>
                 </div>
@@ -116,4 +125,5 @@
         </div>
         <!--/ Header -->
     </div>
+
 </x-layout>

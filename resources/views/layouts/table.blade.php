@@ -1,4 +1,4 @@
-{{-- @section('css')
+{{-- @push('css')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
     <style>
@@ -9,9 +9,9 @@
             text-align: center;
         }
     </style>
-@endsection
+@endpush
 
-@section('js')
+@push('js')
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
@@ -21,7 +21,7 @@
             responsive: true
         });
     </script>
-@endsection --}}
+@endpush --}}
 
 {{-- <div class="table-responsive">
     <table id="example" class="display table nowrap" style="width:100%">
@@ -62,7 +62,7 @@
 </div> --}}
 
 
-@section('css')
+@push('css')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
     <style>
@@ -90,14 +90,14 @@
             /* Set link border color on hover */
         }
     </style>
-@endsection
-
-@section('js')
+@endpush
+@push('scripts')
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
-    <script>
-        $('table.display').DataTable();
-    </script>
-@endsection
+@endpush
+
+@push('js')
+    $('table.display').DataTable();
+@endpush

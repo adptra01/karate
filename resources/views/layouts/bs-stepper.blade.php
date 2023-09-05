@@ -1,11 +1,11 @@
-@section('css')
+@push('css')
     <link rel="stylesheet" href="/assets/vendor/libs/bs-stepper/bs-stepper.css" />
-@endsection
+@endpush
 
-
-@section('js')
+@push('scripts')
     <script src="/assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
-    <script>
+@endpush
+@push('js')
         const wizardNumbered = document.querySelector(".wizard-numbered");
 
         if (typeof wizardNumbered !== undefined && wizardNumbered !== null) {
@@ -36,8 +36,7 @@
             //     });
             // }
         }
-    </script>
-@endsection
+@endpush
 
 {{-- <div class="bs-stepper wizard-numbered mt-2">
     <div class="bs-stepper-header">

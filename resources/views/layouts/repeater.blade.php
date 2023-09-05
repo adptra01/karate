@@ -49,12 +49,10 @@
         </form>
     </div>
 </div>
-{{-- /slot --}}
-
-@section('js')
+@push('scripts')
     <script src="/assets/vendor/libs/jquery-repeater/jquery-repeater.js"></script>
-
-    <script>
+@endpush
+@push('js')
         // Form Repeater
         // ! Using jQuery each loop to add dynamic id and class for inputs. You may need to improve it based on form fields.
         // -----------------------------------------------------------------------------------------------------------------
@@ -85,5 +83,4 @@
                 confirm('Are you sure you want to delete this element?') && $(this).slideUp(e);
             }
         });
-    </script>
-@endsection
+@endpush
