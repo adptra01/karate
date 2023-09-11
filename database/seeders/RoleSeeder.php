@@ -16,23 +16,19 @@ class RoleSeeder extends Seeder
     {
         $roles = [
             [
-                'name' => 'Super Admin',
+                'name' => 'admin',
                 'guard_name' => 'web'
             ],
             [
-                'name' => 'Tournament Management',
+                'name' => 'organizer',
                 'guard_name' => 'web'
             ],
             [
-                'name' => 'Score Management',
+                'name' => 'operator',
                 'guard_name' => 'web'
             ],
             [
-                'name' => 'Participant Management',
-                'guard_name' => 'web'
-            ],
-            [
-                'name' => 'Team Management',
+                'name' => 'coach',
                 'guard_name' => 'web'
             ],
         ];
@@ -40,6 +36,5 @@ class RoleSeeder extends Seeder
         foreach ($roles as $item) {
             Role::create($item);
         }
-
     }
 }

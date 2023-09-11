@@ -61,13 +61,20 @@
                                     <div class="col-12 col-md-4 ps-md-3 ps-lg-5 pt-3 pt-md-0">
                                         <div class="d-flex justify-content-end align-items-center"
                                             style="position: relative;">
-                                            <form action="{{ route('events.status', $event->id) }}" method="post">
-                                                @csrf
-                                                @method('put')
-                                                <button type="submit"
-                                                    class="btn btn-label-{{ $event->status == 0 ? 'success' : 'danger' }}">{{ $event->status == 0 ? 'Buka Acara' : 'Tutup Acara' }}</button>
-                                            </form>
+                                            <a class="btn btn-primary" href="#" role="button">Daftar
+                                                Pertandingan Ini</a>
                                         </div>
+                                        @role('admin|organizer')
+                                            <div class="d-flex justify-content-end align-items-center"
+                                                style="position: relative;">
+                                                <form action="{{ route('events.status', $event->id) }}" method="post">
+                                                    @csrf
+                                                    @method('put')
+                                                    <button type="submit"
+                                                        class="btn m-2 btn-label-{{ $event->status == 0 ? 'success' : 'danger' }}">{{ $event->status == 0 ? 'Buka Acara' : 'Tutup Acara' }}</button>
+                                                </form>
+                                            </div>
+                                        @endrole
                                     </div>
                                 </div>
                             </div>
@@ -93,11 +100,13 @@
                                 data-bs-target="#navs-pills-top-home" aria-controls="navs-pills-top-home"
                                 aria-selected="true">Tim & Peserta</button>
                         </li>
-                        <li class="nav-item">
-                            <button type="button" class="nav-link" role="tab" data-bs-toggle="tab"
-                                data-bs-target="#navs-pills-top-event" aria-controls="navs-pills-top-event"
-                                aria-selected="false">Acara</button>
-                        </li>
+                        @can('manage_event')
+                            <li class="nav-item">
+                                <button type="button" class="nav-link" role="tab" data-bs-toggle="tab"
+                                    data-bs-target="#navs-pills-top-event" aria-controls="navs-pills-top-event"
+                                    aria-selected="false">Acara</button>
+                            </li>
+                        @endcan
                         <li class="nav-item">
                             <button type="button" class="nav-link" role="tab" data-bs-toggle="tab"
                                 data-bs-target="#navs-pills-top-organizer" aria-controls="navs-pills-top-organizer"
@@ -108,14 +117,25 @@
                         <div class="tab-pane fade show active" id="navs-pills-top-home" role="tabpanel">
                             @include('event.partials.teamsParticipants')
                         </div>
-                        <div class="tab-pane fade" id="navs-pills-top-event" role="tabpanel">
-                            @include('event.edit')
-                        </div>
+                        @can('manage_event')
+                            <div class="tab-pane fade" id="navs-pills-top-event" role="tabpanel">
+                                @include('event.edit')
+                            </div>
+                        @endcan
                         <div class="tab-pane fade" id="navs-pills-top-organizer" role="tabpanel">
-                            @if ($event->users->count() > 0)
-                                @include('event.partials.updateOrganizer')
-                            @else
-                                @include('event.partials.addOrganizer')
+                            <h5>Anggota penyelenggara</h5>
+                            @can('manage_event')
+                                <div class="alert alert-danger" role="alert">
+                                    <strong>Perhatian !!!!</strong>
+                                    <p>User yang pilih adalah mereka yang dipilih dan memiliki tanggung jawab penuh dengan
+                                        acara ini. Pastikan tidak menyalahgunakan kewenangan.</p>
+                                </div>
+
+                                @if ($event->users->count() > 0)
+                                    @include('event.partials.updateOrganizer')
+                                @else
+                                    @include('event.partials.addOrganizer')
+                                @endcan
                             @endif
                             @include('event.partials.organizer')
                         </div>

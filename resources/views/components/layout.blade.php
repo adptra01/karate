@@ -172,7 +172,8 @@
                                                 <div class="flex-grow-1">
                                                     <span
                                                         class="fw-semibold d-block">{{ Auth()->user()->name ?? 'Guest' }}</span>
-                                                    <small class="text-muted">Admin</small>
+                                                    <small
+                                                        class="text-muted">{{ Auth()->user()->getRoleNames()->first() }}</small>
                                                 </div>
                                             </div>
                                         </a>
@@ -332,7 +333,9 @@
 
     @stack('scripts')
     <script>
-        $(document).ready(function() {
+        // $(document).ready(function() {
+        document.addEventListener('DOMContentLoaded', function() {
+
             @stack('js')
         });
     </script>

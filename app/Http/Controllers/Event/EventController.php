@@ -15,11 +15,14 @@ class EventController extends Controller
     public function __construct(ClaudinaryService $claudinaryService)
     {
         $this->claudinaryService = $claudinaryService;
+        $this->middleware('auth');
     }
     public function index()
     {
         return view('event.index', [
             'events' => Event::latest()->get(),
+            'activeEvents' => Event::whereStatus(1)->get(),
+            'nonEvents' => Event::whereStatus(0)->get(),
         ]);
     }
 
@@ -31,6 +34,7 @@ class EventController extends Controller
         $data['thumbnail'] = 'https://images.unsplash.com/photo-1688744249266-3718f88f0e20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg';
 
         $event = Event::create($data);
+        $event->users()->attach(Auth()->user()->id);
         $image = $request->file('thumbnail');
         try {
             $result = $this->claudinaryService->uploadClaudinary($image, $event);

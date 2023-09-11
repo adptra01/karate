@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class OrganizerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        // $this->middleware('role:admin|organizer');
+    }
     public function store(Request $request)
     {
         // Validasi permintaan
@@ -56,7 +61,7 @@ class OrganizerController extends Controller
         if ($userIds == null) {
             $event->users()->detach();
         } else {
-            // Jika userIds tidak kosong, tambahkan hubungan baru atau perbaharui yang ada
+        // Jika userIds tidak kosong, tambahkan hubungan baru atau perbaharui yang ada
             $event->users()->sync($userIds);
         }
 

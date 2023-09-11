@@ -28,11 +28,15 @@
                     <div class="text-truncate" data-i18n="users">Users</div>
                 </a>
             </li>
-
-
         </ul>
     </li>
 
+    <li class="menu-item">
+        <a href="{{ route('events.index') }}" class="menu-link">
+            <i class="menu-icon tf-icons bx bxs-calendar"></i>
+            <div data-i18n="Event">Events</div>
+        </a>
+    </li>
     <li class="menu-item">
         <a href="{{ route('events.index') }}" class="menu-link">
             <i class="menu-icon tf-icons bx bxs-calendar"></i>
