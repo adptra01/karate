@@ -13,9 +13,8 @@
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="user-profile-header-banner">
-                        <img src="{{ $event->thumbnail ?? 'https://images.unsplash.com/photo-1603210185246-b1662978ea37?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGthcmF0ZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60' }}"
-                            alt="Banner image" height="200px" style="object-fit: cover; width: -webkit-fill-available"
-                            class="rounded-top">
+                        <img src="{{ $event->thumbnail }}" alt="Banner image" height="200px"
+                            style="object-fit: cover; width: -webkit-fill-available" class="rounded-top">
                     </div>
                     <div class="user-profile-header d-flex flex-column flex-sm-row text-sm-start text-center mb-4">
                         <div class="flex-grow-1 mt-3 mt-sm-5">
@@ -59,11 +58,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-4 ps-md-3 ps-lg-5 pt-3 pt-md-0">
-                                        <div class="d-flex justify-content-end align-items-center"
-                                            style="position: relative;">
-                                            <a class="btn btn-primary" href="#" role="button">Daftar
-                                                Pertandingan Ini</a>
-                                        </div>
+
                                         @role('admin|organizer')
                                             <div class="d-flex justify-content-end align-items-center"
                                                 style="position: relative;">
@@ -73,6 +68,12 @@
                                                     <button type="submit"
                                                         class="btn m-2 btn-label-{{ $event->status == 0 ? 'success' : 'danger' }}">{{ $event->status == 0 ? 'Buka Acara' : 'Tutup Acara' }}</button>
                                                 </form>
+                                            </div>
+                                        @else
+                                            <div class="d-flex justify-content-end align-items-center"
+                                                style="position: relative;">
+                                                <a class="btn btn-label-{{ $event->status == 1 ? 'success' : 'danger' }}"
+                                                    href="{{ route('events.register', $event->id) }}">{{ $event->status == 1 ? 'Daftar pertandingan' : 'Pendaftaran ditutup' }}</a>
                                             </div>
                                         @endrole
                                     </div>
@@ -87,7 +88,7 @@
                         </div>
                         <div class="mb-2">
                             <h5>Deskripsi: </h5>
-                            <p>{{ $event->description }}</p>
+                            <div>{!! $event->description !!}</div>
                         </div>
                     </div>
                 </div>
@@ -104,7 +105,7 @@
                             <li class="nav-item">
                                 <button type="button" class="nav-link" role="tab" data-bs-toggle="tab"
                                     data-bs-target="#navs-pills-top-event" aria-controls="navs-pills-top-event"
-                                    aria-selected="false">Acara</button>
+                                    aria-selected="false">Pengaturan</button>
                             </li>
                         @endcan
                         <li class="nav-item">
@@ -115,7 +116,7 @@
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="navs-pills-top-home" role="tabpanel">
-                            @include('event.partials.teamsParticipants')
+                            {{-- @include('event.partials.teamsParticipants') --}}
                         </div>
                         @can('manage_event')
                             <div class="tab-pane fade" id="navs-pills-top-event" role="tabpanel">
@@ -132,12 +133,12 @@
                                 </div>
 
                                 @if ($event->users->count() > 0)
-                                    @include('event.partials.updateOrganizer')
+                                    @include('organizer.edit')
                                 @else
-                                    @include('event.partials.addOrganizer')
-                                @endcan
-                            @endif
-                            @include('event.partials.organizer')
+                                    @include('organizer.add')
+                                @endif
+                            @endcan
+                            @include('organizer.index')
                         </div>
                     </div>
                 </div>

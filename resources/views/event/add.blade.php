@@ -37,7 +37,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Deskripsi/penjelasan acara</label>
-                        <textarea class="form-control" name="description" id="description" rows="3"
+                        <textarea class="form-control" name="description" id="editor" rows="3"
                             placeholder="Cth: Championship karate adalah sebuah kompetisi karate yang diadakan untuk menentukan siapa yang menjadi juara dalam pertandingan tersebut.">{{ old('description') }}</textarea>
                         @error('description')
                             <small id="helpId" class="form-text text-danger fw-bold">{{ $message }}</small>

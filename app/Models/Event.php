@@ -28,4 +28,13 @@ class Event extends Model
     {
         return $this->morphMany(Media::class, 'medially');
     }
+
+    public function categories()
+    {
+        return $this->hasMany(Teams::class);
+    }
+    public function teams()
+    {
+        return $this->hasMany(Teams::class);
+    }
 }

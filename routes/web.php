@@ -68,6 +68,7 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/{id}', [EventController::class, 'destroy'])->name('events.destroy');
 
         Route::put('/{id}/status', [EventController::class, 'status'])->name('events.status');
+        Route::get('/{id}/register', [EventController::class, 'register'])->name('events.register');
     });
 
     Route::prefix('organizers')->group(function () {

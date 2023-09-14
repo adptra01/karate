@@ -28,13 +28,16 @@ class EventController extends Controller
 
     public function store(EventRequest $request)
     {
+
         $data = $request->validated();
 
         $data['status'] = false;
         $data['thumbnail'] = 'https://images.unsplash.com/photo-1688744249266-3718f88f0e20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg';
 
         $event = Event::create($data);
-        $event->users()->attach(Auth()->user()->id);
+        if (!Auth()->user()->hasRole('admin')) {
+            $event->users()->attach(Auth()->user()->id);
+        }
         $image = $request->file('thumbnail');
         try {
             $result = $this->claudinaryService->uploadClaudinary($image, $event);
@@ -93,5 +96,12 @@ class EventController extends Controller
         $event->update(['status' => $change]);
         $session = $change == 1 ? 'Selamat ' . $event->name . ' Telah dibuka !!! ✨' : 'Maap, saat ini ' . $event->name . ' sedang ditutup.';
         return back()->with($change == 1 ? 'success' : 'warning', $session);
+    }
+
+    public function register($id)
+    {
+        return view('team.index', [
+            'event' => Event::find($id)
+        ]);
     }
 }
