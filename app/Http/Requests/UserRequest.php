@@ -32,7 +32,7 @@ class UserRequest extends FormRequest
             'telp' => 'required|string|min:11|max:12',
             'address' => 'nullable|string|max:255|min:6',
             'status' => 'required|in:0,1',
-            'role' => 'nullable|exists:roles,id',
+            'role' => 'nullable|required',
         ];
     }
 }

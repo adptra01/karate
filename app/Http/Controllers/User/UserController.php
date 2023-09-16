@@ -73,6 +73,7 @@ class UserController extends Controller
 
     public function update(UserRequest $request, $id)
     {
+        // dd($request->all());
         $data = $request->validated();
         $user = User::find($id);
 
@@ -88,21 +89,14 @@ class UserController extends Controller
             $data['avatar'] = $result->getSecurePath();
         }
 
-        // Update user data
-        if ($request->filled('password')) {
-            // If a new password is provided, hash and update it
-            $data['password'] = bcrypt($request->password);
-        } else {
-            // If no new password is provided, remove it from the data to avoid overwriting with an empty password
-            unset($data['password']);
-        }
-
         $this->userService->update($id, $data);
 
         if ($request->role) {
-            // Assign the role to the user
             $role = Role::findOrFail($request->role);
             $user->syncRoles($role);
+        } elseif($request->role == 0)
+        {
+            $user->syncRoles([]);
         }
 
         return back()->with('success', 'User has been updated successfully.');

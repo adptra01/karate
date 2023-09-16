@@ -78,13 +78,14 @@
             <div class="mb-3">
                 <label for="role" class="form-label">Role</label>
                 <select class="form-select" name="role" id="role">
-                    <option value=" ">Select one</option>
+                    <option value="">Select one</option>
                     @foreach ($roles as $role)
                         <option value="{{ $role->id }}"
                             @if ($user->roles->first()) {{ $user->roles->first()->id == $role->id ? 'selected' : '' }} @endif>
                             {{ $role->name }}
                         </option>
                     @endforeach
+                    <option value="0">tidak ada</option>
                 </select>
                 @error('roles')
                     <small id="helpId" class="form-text text-danger">{{ $message }}</small>

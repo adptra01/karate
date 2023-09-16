@@ -1,5 +1,5 @@
 <x-layout>
-    <x-slot name="title">{{ $event->name . ' - ' . $event->status }}</x-slot>
+    <x-slot name="title">{{ $event->name }}</x-slot>
     @push('additional-select2')
         maximumSelectionLength: 3
     @endpush
@@ -66,34 +66,42 @@
                                         @else
                                             <a class="btn btn-label-{{ $event->status == 1 ? 'success' : 'danger' }}"
                                                 href="{{ route('events.register', $event->id) }}">{{ $event->status == 1 ? 'Daftar pertandingan' : 'Pendaftaran ditutup' }}</a>
-                                            <button type="button" class="btn btn-label-secondary bg-body btn-sm"
-                                                data-bs-toggle="tooltip" data-bs-html="true" data-bs-offset="0,4"
-                                                title="Detail Pertandingan">
-                                                <a data-bs-toggle="collapse" href="#detailEvent" role="button"
-                                                    aria-expanded="false" aria-controls="detailEvent">
-                                                    <i class='bx-tada bx bxs-down-arrow text-white'></i>
-                                                </a>
-                                            </button>
                                         @endrole
+                                        <div data-bs-toggle="tooltip" data-bs-html="true" data-bs-offset="0,4"
+                                            title="Detail Pertandingan">
+                                            <a type="button" class="accordion-button" data-bs-toggle="collapse"
+                                                data-bs-target="#{{ Str::slug($event->name) }}" aria-expanded="true"
+                                                aria-controls="{{ Str::slug($event->name) }}" role="tabpanel">
+                                                <i class='bx-tada bx bxs-down-arrow bx-border border-white'></i>
+                                            </a>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <div class="collapse row container" id="detailEvent">
-                            <div class="col-md-2">
-                                <div class="mb-2">
-                                    <h5>Lokasi: </h5>
-                                    <p>{{ $event->location }}</p>
-                                </div>
-                            </div>
-                            <div class="col-md">
-                                <div class="mb-2">
-                                    <h5>Deskripsi: </h5>
-                                    <div>{!! $event->description !!}</div>
-                                </div>
+                    <div class="card-footer px-3">
+                        <div class="accordion" id="accordionExample">
+                            <div id="{{ str::slug($event->name) }}" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="mb-2">
+                                                <h6 class="fw-bold text-decoration-underline">Lokasi</h6>
+                                                <p>{{ $event->location }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md">
+                                            <div class="mb-2">
+                                                <h6 class="fw-bold text-decoration-underline">Deskripsi</h6>
+                                                {!! $event->description !!}
+                                            </div>
 
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

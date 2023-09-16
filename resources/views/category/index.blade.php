@@ -1,12 +1,12 @@
 <div class="mb-3">
     <h5>Kelas Pertandingan</h5>
     @can('manage_event')
-        @include('category.add')
         <div class="alert alert-danger" role="alert">
             <strong>Perhatian !!!!</strong>
             <p>User yang pilih adalah mereka yang dipilih dan memiliki tanggung jawab penuh dengan
                 acara ini. Pastikan tidak menyalahgunakan kewenangan.</p>
         </div>
+        @include('category.add')
     @endcan
 </div>
 <div class="table-responsive">
@@ -24,14 +24,14 @@
             @foreach ($categories as $no => $category)
                 <tr>
                     <td>{{ $category->name }}</td>
-                    <td>{{ $category->gender }}</td>
+                    <td>{{ $category->gender == 'male' ? 'Putra' : 'Putri' }}</td>
                     <td>{{ $category->weight }}</td>
                     <td>{{ $category->age }}</td>
                     <td>
                         @can('manage_event')
                             <div class="d-flex gap-3 justify-content-center">
                                 @include('category.edit')
-                                <form action="" method="post">
+                                <form action="{{ route('category.destroy', $category->id) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-label-danger btn-sm">Hapus</button>
