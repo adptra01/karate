@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Event\CategoryController;
 use App\Http\Controllers\Event\EventController;
 use App\Http\Controllers\Event\OrganizerController;
 use App\Http\Controllers\HomeController;
@@ -80,5 +81,6 @@ Route::middleware(['auth'])->group(function () {
 
     // });
 
+    Route::resource('category', CategoryController::class);
     Route::resource('teams', TeamController::class);
 });

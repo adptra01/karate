@@ -1,4 +1,4 @@
-<button class="btn btn-label-warning mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+<button class="btn btn-label-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
     aria-expanded="false" aria-controls="collapseExample">
     Ubah Anggota
 </button>

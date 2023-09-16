@@ -43,20 +43,19 @@
                                         <td>
                                             <div class="d-flex gap-3 justify-content-center">
                                                 @can('manage_event')
-                                                    <a class="btn btn-info btn-sm" href="{{ route('events.show', $event->id) }}"
-                                                        role="button">Detail</a>
+                                                    <a class="btn btn-label-info btn-sm"
+                                                        href="{{ route('events.show', $event->id) }}" role="button">Detail</a>
                                                     <form action="{{ route('events.destroy', $event->id) }}" method="post">
                                                         @csrf
                                                         @method('delete')
-                                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                                        <button type="submit" class="btn btn-label-danger btn-sm">Hapus</button>
                                                     </form>
                                                 @endcan
                                             </div>
                                         </td>
                                     </tr>
                                 @endforeach
-                            @endrole
-                            @hasrole('admin')
+                                @elserole('admin')
                                 @foreach ($events as $no => $event)
                                     <tr>
                                         <td>{{ ++$no }}.</td>
@@ -99,15 +98,15 @@
                                         <div class="card mb-5 shadow-lg mx-2 rounded">
                                             <div class="row g-0">
                                                 <div class="col-md-4">
-                                                    <img class="card-img card-img-left" src="assets/img/elements/12.jpg"
-                                                        style="min-width: 170px;object-fit: cover; min-height: 200px;"
+                                                    <img class="card-img card-img-left" src="{{ $event->thumbnail }}"
+                                                        style="min-width: 170px;object-fit: cover; height: 200px;"
                                                         alt="Card image" />
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title fw-bold">{{ $event->name }}</h5>
-                                                        <p class="card-text">
-                                                            {!! Str::limit($event->description, 50, '...') !!}
+                                                    <div class="card-body text-center">
+                                                        <h4 class="card-title fw-bold">{{ $event->name }}</h4>
+                                                        <p class="card-text text-primary">
+                                                            {{ $event->location }}
                                                         </p>
                                                         <a href="{{ route('events.show', $event->id) }}"
                                                             class="btn btn-label-primary">Detail</a>

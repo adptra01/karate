@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Event;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EventRequest;
+use App\Models\Category;
 use App\Models\Event;
 use App\Models\User;
 use App\Services\ClaudinaryService;
+use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
@@ -53,6 +55,7 @@ class EventController extends Controller
         return view('event.show', [
             'event' => event::find($id),
             'users' => User::get(),
+            'categories' => Category::where('event_id', $id)->get()
         ]);
     }
 
@@ -89,14 +92,17 @@ class EventController extends Controller
         return back()->with('success', 'Anda telah berhasil menghapus acara yang diinginkan.');
     }
 
-    public function status($id)
+    public function status(Request $request, $id)
     {
+        $validatedData = $request->validate(['status' => 'required|boolean']);
         $event = Event::find($id);
-        $change = $event->status == 1 ? 0 : 1;
-        $event->update(['status' => $change]);
-        $session = $change == 1 ? 'Selamat ' . $event->name . ' Telah dibuka !!! ✨' : 'Maap, saat ini ' . $event->name . ' sedang ditutup.';
-        return back()->with($change == 1 ? 'success' : 'warning', $session);
+        $event->update($validatedData);
+
+        $session = $event->status == 1 ? 'Selamat ' . $event->name . ' Telah dibuka !!! ✨' : 'Maaf, saat ini ' . $event->name . ' sedang ditutup.';
+        return back()->with($event->status == 1 ? 'success' : 'warning', $session);
     }
+
+
 
     public function register($id)
     {

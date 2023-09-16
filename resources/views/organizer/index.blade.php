@@ -1,3 +1,19 @@
+<div class="mb-3">
+    <h5>Anggota penyelenggara</h5>
+    @can('manage_event')
+        <div class="alert alert-danger" role="alert">
+            <strong>Perhatian !!!!</strong>
+            <p>User yang pilih adalah mereka yang dipilih dan memiliki tanggung jawab penuh dengan
+                acara ini. Pastikan tidak menyalahgunakan kewenangan.</p>
+        </div>
+
+        @if ($event->users->count() > 0)
+            @include('organizer.edit')
+        @else
+            @include('organizer.add')
+        @endif
+    @endcan
+</div>
 <div class="table-responsive">
     <table id="example" class="display table nowrap" style="width:100%">
         <thead>
