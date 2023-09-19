@@ -18,6 +18,9 @@ class CreateTeamsTable extends Migration
             $table->string('name');
             $table->string('logo');
             $table->string('region');
+            $table->string('manager');
+            $table->string('telp');
+            $table->string('photo');
             $table->foreignId('event_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

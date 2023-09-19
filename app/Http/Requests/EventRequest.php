@@ -28,7 +28,7 @@ class EventRequest extends FormRequest
             'location' => 'required|min:5|max:200',
             'description' => 'required|min:10',
             'status' => 'boolean',
-            'thumbnail' => '',
+            'thumbnail' => 'nullable',
         ];
     }
 }

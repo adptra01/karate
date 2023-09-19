@@ -24,7 +24,6 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'event_id' => 'required|integer|exists:events,id',
             'name' => 'required|string|max:255',
             'weight' => 'required',
             'age' => 'required',

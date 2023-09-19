@@ -11,7 +11,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                 </button>
             </div>
-            <form action="{{ route('category.store') }}" method="post">
+            <form action="{{ route('categories.store', $event->slug) }}" method="post">
                 @csrf
                 <div class="modal-body">
                     <div class="text-center mb-4">
@@ -21,7 +21,6 @@
                         <div class="divider-text">Detail Kelas Pertandingan</div>
                     </div>
                     <div class="mb-3">
-                        <input type="hidden" name="event_id" value="{{ $event->id }}">
                         <label for="name" class="form-label">nama</label>
                         <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}"
                             aria-describedby="helpId" placeholder="Cth: Kata Usia Dini/Kata Putra/Kata Putri">

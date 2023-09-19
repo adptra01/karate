@@ -61,15 +61,21 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/{id}', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/{id}', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
+    
     Route::prefix('events')->group(function () {
         Route::get('/', [EventController::class, 'index'])->name('events.index');
         Route::post('/', [EventController::class, 'store'])->name('events.store');
-        Route::get('/{id}', [EventController::class, 'show'])->name('events.show');
-        Route::put('/{id}', [EventController::class, 'update'])->name('events.update');
-        Route::delete('/{id}', [EventController::class, 'destroy'])->name('events.destroy');
+        Route::get('/{slug}/show', [EventController::class, 'show'])->name('events.show');
+        Route::put('/{slug}', [EventController::class, 'update'])->name('events.update');
+        Route::delete('/{slug}', [EventController::class, 'destroy'])->name('events.destroy');
+
+        Route::post('/{slug}/category', [CategoryController::class, 'store'])->name('categories.store');
+        Route::put('/{id}/category', [CategoryController::class, 'update'])->name('categories.update');
+        Route::delete('/{id}/category', [CategoryController::class, 'destroy'])->name('categories.destroy');
 
         Route::put('/{id}/status', [EventController::class, 'status'])->name('events.status');
-        Route::get('/{id}/register', [EventController::class, 'register'])->name('events.register');
+        Route::get('/{slug}/register', [EventController::class, 'register'])->name('events.register');
+        Route::post('/{slug}/registered', [EventController::class, 'registered'])->name('events.registered');
     });
 
     Route::prefix('organizers')->group(function () {
@@ -77,10 +83,6 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/{id}', [OrganizerController::class, 'update'])->name('organizers.update');
     });
 
-    // Route::prefix('teams')->group(function () {
 
-    // });
-
-    Route::resource('category', CategoryController::class);
     Route::resource('teams', TeamController::class);
 });

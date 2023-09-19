@@ -1,4 +1,4 @@
-<button class="btn btn-label-success" type="button" data-bs-toggle="collapse"
+<button class="btn btn-label-success mb-3" type="button" data-bs-toggle="collapse"
     data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     Tambah Anggota
 </button>

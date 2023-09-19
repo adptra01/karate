@@ -5,14 +5,22 @@ namespace App\Http\Controllers\Event;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function store(CategoryRequest $request)
+    public function store(CategoryRequest $request, $slug)
     {
-        Category::create($request->validated());
-        return back()->with('success', 'Kelas pertandingan berhasil dibuat');
+        $event = Event::whereSlug($slug)->first();
+        if ($event) {
+            $data = $request->validated();
+            $data['event_id'] = $event->id;
+            Category::create($data);
+            return back()->with('success', 'Kelas pertandingan berhasil dibuat');
+        } else {
+            return back()->with('error', 'Event pertandingan tidak ditemukan.');
+        }
     }
 
     public function update($id, CategoryRequest $request)

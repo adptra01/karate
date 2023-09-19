@@ -8,9 +8,9 @@
         </div>
 
         @if ($event->users->count() > 0)
-            @include('organizer.edit')
+            @include('events.organizer.edit')
         @else
-            @include('organizer.add')
+            @include('events.organizer.add')
         @endif
     @endcan
 </div>

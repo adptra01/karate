@@ -14,7 +14,7 @@
     @can('manage_event')
         <div class="card">
             <div class="card-header">
-                @include('event.add')
+                @include('events.event.add')
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -44,8 +44,8 @@
                                             <div class="d-flex gap-3 justify-content-center">
                                                 @can('manage_event')
                                                     <a class="btn btn-label-info btn-sm"
-                                                        href="{{ route('events.show', $event->id) }}" role="button">Detail</a>
-                                                    <form action="{{ route('events.destroy', $event->id) }}" method="post">
+                                                        href="{{ route('events.show', $event->slug) }}" role="button">Detail</a>
+                                                    <form action="{{ route('events.destroy', $event->slug) }}" method="post">
                                                         @csrf
                                                         @method('delete')
                                                         <button type="submit" class="btn btn-label-danger btn-sm">Hapus</button>
@@ -68,9 +68,9 @@
                                         </td>
                                         <td>
                                             <div class="d-flex gap-3 justify-content-center">
-                                                <a class="btn btn-info btn-sm" href="{{ route('events.show', $event->id) }}"
+                                                <a class="btn btn-info btn-sm" href="{{ route('events.show', $event->slug) }}"
                                                     role="button">Detail</a>
-                                                <form action="{{ route('events.destroy', $event->id) }}" method="post">
+                                                <form action="{{ route('events.destroy', $event->slug) }}" method="post">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
@@ -95,7 +95,7 @@
                             <li class="splide__slide">
                                 <div class="splide__slide__container">
                                     <div class="slide__content">
-                                        <a href="{{ route('events.show', $event->id) }}">
+                                        <a href="{{ route('events.show', $event->slug) }}">
                                             <div class="card mb-5 shadow-lg mx-2 rounded">
                                                 <div class="row g-0">
                                                     <div class="col-md-4">

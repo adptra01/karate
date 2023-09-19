@@ -1,5 +1,5 @@
     @include('layouts.editor')
-    <form action="{{ route('events.update', $event->id) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('events.update', $event->slug) }}" method="post" enctype="multipart/form-data">
     @csrf
     @method('put')
     <div class="mb-4">

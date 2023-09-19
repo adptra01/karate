@@ -13,7 +13,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                 </button>
             </div>
-            <form action="{{ route('category.update', $category->id) }}" method="post">
+            <form action="{{ route('categories.update', $category->id) }}" method="post">
                 @csrf
                 @method('put')
                 <div class="modal-body">

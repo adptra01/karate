@@ -17,6 +17,7 @@ class Event extends Model
         'thumbnail',
         'description',
         'status',
+        'slug',
     ];
 
     public function users()

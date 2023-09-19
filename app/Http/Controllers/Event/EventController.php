@@ -9,6 +9,8 @@ use App\Models\Event;
 use App\Models\User;
 use App\Services\ClaudinaryService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 
 class EventController extends Controller
 {
@@ -21,7 +23,7 @@ class EventController extends Controller
     }
     public function index()
     {
-        return view('event.index', [
+        return view('events.event.index', [
             'events' => Event::latest()->get(),
             'activeEvents' => Event::whereStatus(1)->get(),
             'nonEvents' => Event::whereStatus(0)->get(),
@@ -33,7 +35,7 @@ class EventController extends Controller
 
         $data = $request->validated();
 
-        $data['status'] = false;
+        $data['slug'] = 'evt' . Str::random(10);
         $data['thumbnail'] = 'https://images.unsplash.com/photo-1688744249266-3718f88f0e20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg';
 
         $event = Event::create($data);
@@ -44,26 +46,31 @@ class EventController extends Controller
         try {
             $result = $this->claudinaryService->uploadClaudinary($image, $event);
             $event->update(['thumbnail' => $result->getSecurePath()]);
-            return redirect()->route('events.show', $event->id)->with('success', 'Data acara baru berhasil ditambahkan.');
+            return redirect()->route('events.show', $event->slug)->with('success', 'Data acara baru berhasil ditambahkan.');
         } catch (\Throwable $th) {
-            return redirect()->route('events.show', $event->id)->with('warning', 'Data acara baru berhasil ditambahkan, tetapi terdapat kesalahan pada pengunggahan thumbnail acara.');
+            return redirect()->route('events.show', $event->slug)->with('warning', 'Data acara baru berhasil ditambahkan, tetapi terdapat kesalahan pada pengunggahan thumbnail acara.');
         }
     }
 
-    public function show($id)
+    public function show($slug)
     {
-        return view('event.show', [
-            'event' => event::find($id),
-            'users' => User::get(),
-            'categories' => Category::where('event_id', $id)->get()
-        ]);
+        $event = event::whereSlug($slug)->first();
+        if ($event) {
+            return view('events.event.show', [
+                'event' => $event,
+                'users' => User::get(),
+                'categories' => Category::where('event_id', $event->id)->get()
+            ]);
+        } else {
+            return view('errors.404');
+        }
     }
 
-    public function update(EventRequest $request, $id)
+    public function update(EventRequest $request, $slug)
     {
         $validatedData = $request->validated();
 
-        $event = Event::find($id);
+        $event = Event::whereSlug($slug)->first();
 
         if ($request->hasFile('thumbnail')) {
             $media = $event->media->first();
@@ -102,12 +109,30 @@ class EventController extends Controller
         return back()->with($event->status == 1 ? 'success' : 'warning', $session);
     }
 
-
-
-    public function register($id)
+    public function register($slug)
     {
-        return view('team.index', [
-            'event' => Event::find($id)
+        $event = Event::whereSlug($slug)->first();
+        if ($event) {
+            # code...
+            return view('team.index', [
+                'event' => $event,
+            ]);
+        } else {
+            return view('errors.404');
+        }
+    }
+    public function registered(Request $request, $slug)
+    {
+        $request->validate([
+            'name' => 'required|min:5|max:100',
+            'logo' => 'required|mimes:png,jpg|images',
+            'region' => 'required|min:5|max:50',
+            'manager' => 'required|min:5|max:50',
+            'telp' => 'required|min:11|max:12',
+            'photo' => 'required|min:5|max:50',
         ]);
+
+        
+        dd($request->all());
     }
 }

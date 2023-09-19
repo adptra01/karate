@@ -6,7 +6,7 @@
             <p>User yang pilih adalah mereka yang dipilih dan memiliki tanggung jawab penuh dengan
                 acara ini. Pastikan tidak menyalahgunakan kewenangan.</p>
         </div>
-        @include('category.add')
+        @include('events.category.add')
     @endcan
 </div>
 <div class="table-responsive">
@@ -17,6 +17,7 @@
                 <th>Jenis Kelamin</th>
                 <th>Berat</th>
                 <th>Umur</th>
+                <th>Kategori</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -27,11 +28,12 @@
                     <td>{{ $category->gender == 'male' ? 'Putra' : 'Putri' }}</td>
                     <td>{{ $category->weight }}</td>
                     <td>{{ $category->age }}</td>
+                    <td>{{ $category->type == 'group' ? 'Group' : 'Perorangan' }}</td>
                     <td>
                         @can('manage_event')
                             <div class="d-flex gap-3 justify-content-center">
-                                @include('category.edit')
-                                <form action="{{ route('category.destroy', $category->id) }}" method="post">
+                                @include('events.category.edit')
+                                <form action="{{ route('categories.destroy', $category->id) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-label-danger btn-sm">Hapus</button>

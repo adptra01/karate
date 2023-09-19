@@ -1,5 +1,5 @@
 <x-layout>
-    <x-slot name="title">{{ $event->name ?? '' }}</x-slot>
+    <x-slot name="title">Formulir Pendaftaran</x-slot>
     <div class="card mb-3">
         <div class="d-flex align-items-end row">
             <div class="col-8">
@@ -21,7 +21,7 @@
     </div>
     <div class="card mb-3">
         <div class="card-body">
-            {{-- @include('team.add') --}}
+            @include('team.add')
         </div>
     </div>
 </x-layout>

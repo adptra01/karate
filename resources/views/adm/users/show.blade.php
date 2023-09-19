@@ -37,9 +37,8 @@
                             <li class="mb-3">
                                 <span class="fw-medium me-2">Peran:</span>
                                 <span>
-                                    @foreach ($user->roles as $role)
-                                        <span class="badge text-primary bg-label-secondary">{{ $role->name }}</span>
-                                    @endforeach
+                                    <span
+                                        class="badge text-primary bg-label-secondary">{{ $user->getRoleNames()->first() ?? 'Tidak ada' }}</span>
                                 </span>
                             </li>
                             <li class="mb-3">
