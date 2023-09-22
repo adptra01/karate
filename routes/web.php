@@ -61,7 +61,7 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/{id}', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/{id}', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
-    
+
     Route::prefix('events')->group(function () {
         Route::get('/', [EventController::class, 'index'])->name('events.index');
         Route::post('/', [EventController::class, 'store'])->name('events.store');
@@ -69,11 +69,9 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/{slug}', [EventController::class, 'update'])->name('events.update');
         Route::delete('/{slug}', [EventController::class, 'destroy'])->name('events.destroy');
 
-        Route::post('/{slug}/category', [CategoryController::class, 'store'])->name('categories.store');
         Route::put('/{id}/category', [CategoryController::class, 'update'])->name('categories.update');
         Route::delete('/{id}/category', [CategoryController::class, 'destroy'])->name('categories.destroy');
 
-        Route::put('/{id}/status', [EventController::class, 'status'])->name('events.status');
         Route::get('/{slug}/register', [EventController::class, 'register'])->name('events.register');
         Route::post('/{slug}/registered', [EventController::class, 'registered'])->name('events.registered');
     });
@@ -86,3 +84,4 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('teams', TeamController::class);
 });
+

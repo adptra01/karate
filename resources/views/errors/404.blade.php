@@ -34,9 +34,6 @@
     <link rel="stylesheet" href="/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" /> --}}
     <link rel="stylesheet" href="/assets/css/demo.css" />
 
-    <!-- Vendors CSS -->
-    <link rel="stylesheet" href="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-
     <!-- Page CSS -->
     <!-- Page -->
     <link rel="stylesheet" href="/assets/vendor/css/pages/page-misc.css" />
@@ -69,10 +66,7 @@
     <!-- / Content -->
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="/assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="/assets/vendor/libs/popper/popper.js"></script>
     <script src="/assets/vendor/js/bootstrap.js"></script>
-    <script src="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
     <script src="/assets/vendor/js/menu.js"></script>
     <!-- endbuild -->

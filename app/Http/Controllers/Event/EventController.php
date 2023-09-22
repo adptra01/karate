@@ -99,16 +99,6 @@ class EventController extends Controller
         return back()->with('success', 'Anda telah berhasil menghapus acara yang diinginkan.');
     }
 
-    public function status(Request $request, $id)
-    {
-        $validatedData = $request->validate(['status' => 'required|boolean']);
-        $event = Event::find($id);
-        $event->update($validatedData);
-
-        $session = $event->status == 1 ? 'Selamat ' . $event->name . ' Telah dibuka !!! ✨' : 'Maaf, saat ini ' . $event->name . ' sedang ditutup.';
-        return back()->with($event->status == 1 ? 'success' : 'warning', $session);
-    }
-
     public function register($slug)
     {
         $event = Event::whereSlug($slug)->first();
@@ -132,7 +122,7 @@ class EventController extends Controller
             'photo' => 'required|min:5|max:50',
         ]);
 
-        
+
         dd($request->all());
     }
 }

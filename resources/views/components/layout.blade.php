@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" class="dark-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
-    data-assets-path="/assets/" data-template="vertical-menu-template-free">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark-style layout-menu-fixed" dir="ltr"
+    data-theme="theme-default" data-assets-path="/assets/" data-template="vertical-menu-template-free">
 
 <head>
     <meta charset="utf-8" />
@@ -46,10 +46,12 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="/assets/js/config.js"></script>
 
-    @stack('css')
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <!-- Livewire -->
     @livewireStyles
+
+    @stack('css')
 </head>
 
 <body>
@@ -258,6 +260,10 @@
                                 @endforeach
                             </div>
                         @endif
+                        <div wire:offline class="alert alert-danger" role="alert">
+                            <strong>You are now offline.</strong>
+                        </div>
+
                         <h4 class="fw-bold">{{ $title ?? '' }}</h4>
                         {{ $slot }}
                     </div>

@@ -10,18 +10,6 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function store(CategoryRequest $request, $slug)
-    {
-        $event = Event::whereSlug($slug)->first();
-        if ($event) {
-            $data = $request->validated();
-            $data['event_id'] = $event->id;
-            Category::create($data);
-            return back()->with('success', 'Kelas pertandingan berhasil dibuat');
-        } else {
-            return back()->with('error', 'Event pertandingan tidak ditemukan.');
-        }
-    }
 
     public function update($id, CategoryRequest $request)
     {

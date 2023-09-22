@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark-style layout-navbar-fixed " dir="ltr" data-theme="theme-default"
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark-style layout-navbar-fixed " dir="ltr" data-theme="theme-default"
     data-assets-path="/assets/" data-template="front-pages">
 
 <head>

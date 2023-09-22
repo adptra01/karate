@@ -24,62 +24,35 @@
                                 <th>No.</th>
                                 <th>thumbnail</th>
                                 <th>Nama</th>
-                                <th>Status</th>
+                                <th>status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @hasrole('organizer')
-                                @foreach (Auth()->user()->events as $no => $event)
-                                    <tr>
-                                        <td>{{ ++$no }}.</td>
-                                        <td><img src="{{ $event->thumbnail }}" alt=""
-                                                class="avatar avatar-sm rounded-circle">
-                                        </td>
-                                        <td>{{ $event->name }}</td>
-                                        <td><span
-                                                class="badge bg-label-{{ $event->status == 0 ? 'danger' : 'success' }}">{{ $event->status == 0 ? 'Tutup' : 'Buka' }}</span>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex gap-3 justify-content-center">
-                                                @can('manage_event')
-                                                    <a class="btn btn-label-info btn-sm"
-                                                        href="{{ route('events.show', $event->slug) }}" role="button">Detail</a>
-                                                    <form action="{{ route('events.destroy', $event->slug) }}" method="post">
-                                                        @csrf
-                                                        @method('delete')
-                                                        <button type="submit" class="btn btn-label-danger btn-sm">Hapus</button>
-                                                    </form>
-                                                @endcan
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                @elserole('admin')
-                                @foreach ($events as $no => $event)
-                                    <tr>
-                                        <td>{{ ++$no }}.</td>
-                                        <td><img src="{{ $event->thumbnail }}" alt=""
-                                                class="avatar avatar-sm rounded-circle">
-                                        </td>
-                                        <td>{{ $event->name }}</td>
-                                        <td><span
-                                                class="badge bg-label-{{ $event->status == 0 ? 'danger' : 'success' }}">{{ $event->status == 0 ? 'Tutup' : 'Buka' }}</span>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex gap-3 justify-content-center">
-                                                <a class="btn btn-info btn-sm" href="{{ route('events.show', $event->slug) }}"
-                                                    role="button">Detail</a>
-                                                <form action="{{ route('events.destroy', $event->slug) }}" method="post">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
-                                                </form>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            @endrole
+                            @foreach ($events as $no => $item)
+                                <tr>
+                                    <td>{{ ++$no }}.</td>
+                                    <td>
+                                        <img src="{{ $item->thumbnail }}" alt="thumbnail" style="object-fit: cover;"
+                                            class="avatar rounded-circle">
+                                    </td>
+                                    <td>{{ $item->name }}</td>
+                                    <td><span
+                                            class="badge bg-label-{{ $item->status == 1 ? 'success' : 'danger' }}">{{ $item->status == 1 ? 'Buka' : 'Tutup' }}</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex gap-3 justify-content-center">
+                                            <a class="btn btn-info btn-sm" href="{{ route('events.show', $item->slug) }}"
+                                                role="button">Detail</a>
+                                            <form action="{{ route('events.destroy', $item->slug) }}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
