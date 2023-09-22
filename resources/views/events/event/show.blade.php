@@ -1,13 +1,7 @@
 <x-layout>
     @include('layouts.table')
 
-    @include('layouts.select2')
     <x-slot name="title">{{ $event->name }}</x-slot>
-    @push('additional-select2')
-        maximumSelectionLength: 3
-    @endpush
-
-
 
     <div class="flex-grow-1">
         <!-- Header -->
@@ -121,7 +115,8 @@
                             </div>
                         @endcan
                         <div class="tab-pane fade" id="navs-pills-top-organizer" role="tabpanel">
-                            @include('events.organizer.index')
+                            {{-- @include('events.organizer.index') --}}
+                            @livewire('events.organizer', ['eventId' => $event->id])
                         </div>
                     </div>
                 </div>

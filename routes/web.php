@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Event\CategoryController;
 use App\Http\Controllers\Event\EventController;
 use App\Http\Controllers\Event\OrganizerController;
 use App\Http\Controllers\HomeController;
@@ -68,9 +67,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/{slug}/show', [EventController::class, 'show'])->name('events.show');
         Route::put('/{slug}', [EventController::class, 'update'])->name('events.update');
         Route::delete('/{slug}', [EventController::class, 'destroy'])->name('events.destroy');
-
-        Route::put('/{id}/category', [CategoryController::class, 'update'])->name('categories.update');
-        Route::delete('/{id}/category', [CategoryController::class, 'destroy'])->name('categories.destroy');
 
         Route::get('/{slug}/register', [EventController::class, 'register'])->name('events.register');
         Route::post('/{slug}/registered', [EventController::class, 'registered'])->name('events.registered');

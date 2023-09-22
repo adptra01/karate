@@ -16,9 +16,6 @@ class Categories extends Component
         'gender' => 'required|in:male,female',
         'type' => 'required|in:individual,group',
     ];
-    protected $listeners = [
-        'store' => 'tableCategory'
-    ];
 
     public function mount(Event $event)
     {
@@ -72,6 +69,7 @@ class Categories extends Component
     {
         $category = Category::find($id);
         $category->delete();
+        $this->reset(['name', 'weight', 'age', 'type', 'gender']);
         $this->tableCategory();
     }
 }

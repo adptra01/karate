@@ -22,8 +22,7 @@
                                 <div class="mb-3">
                                     <label for="name" class="form-label">nama</label>
                                     <input type="text" class="form-control" wire:model="name" id="name"
-                                        value="{{ old('name') }}" aria-describedby="helpId"
-                                        placeholder="Cth: Kata Usia Dini/Kata Putra/Kata Putri">
+                                        aria-describedby="helpId" placeholder="Cth: Kata Usia Dini/Kata Putra/Kata Putri">
                                     @error('name')
                                         <small wire:loading.class="d-none" wire:target="name"
                                             class="form-text text-danger fw-bold">{{ $message }}</small>
@@ -50,7 +49,7 @@
                                 <div class="mb-3">
                                     <label for="weight" class="form-label">Berat badan</label>
                                     <input type="text" class="form-control" wire:model="weight" id="weight"
-                                        aria-describedby="weight" placeholder="Cth: +30 Kg" value="{{ old('weight') }}">
+                                        aria-describedby="weight" placeholder="Cth: +30 Kg">
                                     @error('weight')
                                         <small wire:loading.class="d-none" wire:target="weight"
                                             class="form-text text-danger fw-bold">{{ $message }}</small>
@@ -61,7 +60,7 @@
                                 <div class="mb-3">
                                     <label for="age" class="form-label">Umur</label>
                                     <input type="text" class="form-control" wire:model="age" id="age"
-                                        aria-describedby="age" placeholder="Cth: 1 - 10 Tahun" value="{{ old('age') }}">
+                                        aria-describedby="age" placeholder="Cth: 1 - 10 Tahun">
                                     @error('age')
                                         <small wire:loading.class="d-none" wire:target="age"
                                             class="form-text text-danger fw-bold">{{ $message }}</small>
@@ -84,8 +83,10 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <button wire:offline.attr="disabled" type="submit"
-                                class="btn btn-label-primary text-end">Submit</button>
+                            <button wire:loading.class="d-none" type="submit" class="btn btn-label-warning text-end">Edit
+                                Kelas</button>
+                            <i wire:loading class="bx bx-loader bx-spin"></i>
+
                         </div>
                     </form>
                 </div>
@@ -104,8 +105,7 @@
                                 <div class="mb-3">
                                     <label for="name" class="form-label">nama</label>
                                     <input type="text" class="form-control" wire:model="name" id="name"
-                                        value="{{ old('name') }}" aria-describedby="helpId"
-                                        placeholder="Cth: Kata Usia Dini/Kata Putra/Kata Putri">
+                                        aria-describedby="helpId" placeholder="Cth: Kata Usia Dini/Kata Putra/Kata Putri">
                                     @error('name')
                                         <small wire:loading.class="d-none" wire:target="name"
                                             class="form-text text-danger fw-bold">{{ $message }}</small>
@@ -132,7 +132,7 @@
                                 <div class="mb-3">
                                     <label for="weight" class="form-label">Berat badan</label>
                                     <input type="text" class="form-control" wire:model="weight" id="weight"
-                                        aria-describedby="weight" placeholder="Cth: +30 Kg" value="{{ old('weight') }}">
+                                        aria-describedby="weight" placeholder="Cth: +30 Kg">
                                     @error('weight')
                                         <small wire:loading.class="d-none" wire:target="weight"
                                             class="form-text text-danger fw-bold">{{ $message }}</small>
@@ -143,8 +143,7 @@
                                 <div class="mb-3">
                                     <label for="age" class="form-label">Umur</label>
                                     <input type="text" class="form-control" wire:model="age" id="age"
-                                        aria-describedby="age" placeholder="Cth: 1 - 10 Tahun"
-                                        value="{{ old('age') }}">
+                                        aria-describedby="age" placeholder="Cth: 1 - 10 Tahun">
                                     @error('age')
                                         <small wire:loading.class="d-none" wire:target="age"
                                             class="form-text text-danger fw-bold">{{ $message }}</small>
@@ -167,8 +166,10 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <button wire:offline.attr="disabled" type="submit"
-                                class="btn btn-label-primary text-end">Submit</button>
+                            <button wire:loading.class="d-none" type="submit"
+                                class="btn btn-label-primary text-end">Tambah Kelas</button>
+                            <i wire:loading class="bx bx-loader bx-spin"></i>
+
                         </div>
                     </form>
                 </div>
@@ -202,12 +203,13 @@
                             <td>{{ $category->type == 'group' ? 'Group' : 'Perorangan' }}</td>
                             <td>
                                 @can('manage_event')
-                                    <div class="d-flex gap-3">
+                                    <div class="d-flex gap-3" wire:loading.class="d-none">
                                         <button wire:loading.attr="disabled" class="btn btn-sm btn-label-warning"
                                             role="button" wire:click="show({{ $category->id }})">Edit</button>
                                         <button wire:loading.attr="disabled" class="btn btn-sm btn-label-danger"
                                             role="button" wire:click="destroy({{ $category->id }})">Hapus</button>
                                     </div>
+                                    <i wire:loading class="bx bx-loader bx-spin"></i>
                                 @else
                                     -
                                 @endcan
